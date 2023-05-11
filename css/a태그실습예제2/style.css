@@ -1,0 +1,20 @@
+/* #000블랙 #fff화이트 */
+
+/* 틈이 생기지 않음, 마진x */
+/* body{ background-color: #000;} */
+
+
+/* *:모든 태그들 */
+*{
+  margin: 0;
+}
+
+
+/* 틈이 생김, 마진이 자동으로 생김 */
+/* .wrapper{ */
+  /* viweport height */
+  width: 100px;
+  /* 높이 만큼 배경색이 들어감 */
+  /* height: 500px;
+  background-color: #fff;
+} */
