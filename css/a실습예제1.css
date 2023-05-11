@@ -1,0 +1,15 @@
+.google{
+  border: 2px ridge blue;
+  
+}
+
+.naver{
+  border: 2px solid green ;
+}
+
+.box {
+  width: 400px;
+  text-align: center;
+  margin: 20px auto;
+  border-radius:  10px;
+}

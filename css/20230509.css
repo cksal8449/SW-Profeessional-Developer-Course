@@ -1,0 +1,35 @@
+ div {
+  /* boder: 테두리를 넣어주는 속성/ 두께(px) 선 종류, 색상 순으로 지정 */
+  /* top, bottom, left, right를 명시하지 않을 경우 상하좌우에 다 들어간다 */
+  /* border: 1px solid yellow; */
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid red;
+  border-left: 2px solid aqua;
+  border-right: 3px solid royalblue; */
+}
+/* css에서 class명으로 스타일을 적용할 때는 꼭 dot(.)을 붙여준다 */
+/* .txt-red{
+  color: rgb(255, 5, 5);
+  border: 2px solid blue;
+} */
+
+.txt-a{
+border: 2px solid green;
+border-radius: 30px;
+background-color: brown;
+color: cadetblue;
+}
+
+.txt-b{
+border: 3px solid purple;
+background-color:#fff;
+color: #000;
+}
+
+.txt-c {
+
+width: 200px ;
+border:2px solid purple;
+border-radius: 20px;
+background-color: blue;
+}
