@@ -13,13 +13,14 @@ body{
 
 
 img{
- width: ; 300px
+ width:  500px;
+ margin-top: 50px;
 }
 
-.whith-bgc{
+.white-bgc{
   background-color: #fff;
   border-radius: 30px;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
