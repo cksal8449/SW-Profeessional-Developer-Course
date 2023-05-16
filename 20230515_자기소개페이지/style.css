@@ -78,6 +78,8 @@ body{
 
 .gnb-item{
   margin-right: 30px;
+  /* rfont-weight: bold or 700px; */
+  font-weight: bold;
 }
 
 /* .magin-zero{  margin-right: 0;} */
@@ -85,4 +87,25 @@ body{
   마지막 요소*/
 .gnb-item:last-child{
   margin-right: 0px;
+}
+
+.my-name{
+  margin-top: 30px;
+  color: #fff;
+}
+
+/* info-section이라는 클래스 안에 있는 img 태그에게만 지정된 스타일 적용 */
+.info-section img{
+  width: 300px;
+  height: 300px;
+  /* 수정하기 쉽게 한번 더 margin-top으로 밀어 줌 
+  통일된 속성을 사용하는게 나중에 수정 시 편함 */
+  margin-top: 30px;
+  border-radius: 50%;
+  /* 물체의 핏을 설정 , contain */
+  /* cover
+    내용이 비율을 유지 하면서 정의된 가로 X 세로 사이즈를 가득 채울 때까지  확대된다 */
+  /* contain
+    내용이 비율을 유지하면서 정의된 가로 X 세로 안에서 최대한으로 차지한다.  */
+  object-fit: cover;
 }
