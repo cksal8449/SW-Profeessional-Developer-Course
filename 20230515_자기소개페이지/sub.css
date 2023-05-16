@@ -1,0 +1,31 @@
+a{
+   text-decoration: none;
+   color: #000;
+}
+
+li{
+  margin-right: 30px;
+}
+
+.gnd-list {
+list-style: none;
+}
+
+.gnd-list li a{
+  text-decoration: none;
+  color: #000;
+
+}
+
+ul{
+  display: flex;
+}
+
+.gnd-item{
+  margin-right: 30px;
+}
+
+.ordered-list{
+  display: flex;
+}
+
