@@ -109,3 +109,23 @@ body{
     내용이 비율을 유지하면서 정의된 가로 X 세로 안에서 최대한으로 차지한다.  */
   object-fit: cover;
 }
+
+.contect-list{
+  display: flex;
+  justify-content:center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.contect-list h3{
+  margin-right: 40px;
+  color: #fff;
+}
+
+.contact-item{
+  padding-right: 20px;
+}
+
+.contact-item:last-child{
+  padding-right: 0;
+}
