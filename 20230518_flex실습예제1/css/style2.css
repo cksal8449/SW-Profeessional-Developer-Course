@@ -1,0 +1,38 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  width: 100%;
+  margin: 0auto;
+}
+
+header{
+  height: 100px;
+  background-color: black;
+}
+
+nav{
+  display: flex;
+}
+
+.logo{
+  /* align-items:flex-start; */
+}
+
+img{
+  width: 70px;
+  height: 80px;
+  justify-content: center;
+}
+
+.gnb-list{
+  text-decoration: none;
+  justify-content: flex-end;
+}
+
+.gnb-item{
+  
+  color:#fff;
+}
