@@ -161,3 +161,21 @@ font-weight: 700;
 .post-box-item p{
 margin-top: 30px;
 }
+
+
+nav-b{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #333;
+  color: #fff;
+}
+
+.gnb-list-b{
+  width: 200px;
+  justify-content: space-between;
+  display: flex;
+  color: #fff;
+}
