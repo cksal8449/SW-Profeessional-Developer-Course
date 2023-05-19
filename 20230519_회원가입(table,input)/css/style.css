@@ -1,3 +1,5 @@
-body{
-  background-color: black;
+.table-border{
+/* separate(기본값) : border가 분리
+ collapse: border기 한줄로 */
+  border-collapse:collapse;
 }
