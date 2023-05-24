@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+i{
+  color: #fff;
+  font-size: 48px;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+nav{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 40px;
+background-color: skyblue;
+}
+
+.logo img{
+ width: 40px;
+}
+
+.gnb-list{
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+}
+
+.gnb-item a{
+  color: #fff;
+  font-weight: 700;
+}
+
+.background{
+  height: 600px;
+  background-image: url(../images/스누피배경.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.back-txt{
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.back-title{
+  font-size: 36px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.back-content{
+  width: 80%;
+  margin-top: 30px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.back-btn{
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+}
+
+.post-box-list{
+  display: flex;
+  flex-direction: column; 
+  margin-top: -70px;
+}
+
+.post-box-item {
+  width:500px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: rgb(217, 241, 254);
+  border-radius: 20px;
+}
+
+.snoopy-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  background-color:rgb(217, 241, 254) ;
+}
+
+.snoopy{
+  width: 1200px;
+  height: 600px;
+  background-color: #fff;
+  background-image: url(../images/스누피2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:inherit;
+  background-attachment: fixed;
+}
+
+.scroll{
+  height: 1000px;
+}
+
+footer{
+  background-color: skyblue;
+  
+}
+
+.global-footer{
+  display: flex;
+  justify-content:space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.Contact{
+  color: #fff;
+}
+
+
+.footer-list{
+  display: flex;
+}
+
+.footer-item{
+  margin-right: 20px;
+}
+
+.footer-item:last-child{
+  margin-right: 0;
+}
+
