@@ -83,20 +83,27 @@ background-color: skyblue;
   border-radius: 5px;
 }
 
-.post-box-list{
-  display: flex;
-  flex-direction: column; 
-  margin-top: -70px;
+.post-card{
+  position: relative;
+  top: -50px;
 }
 
-.post-box-item {
-  width:500px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  padding: 40px 20px;
+.post-card > div {
+  width:80%;
+  /* 최대폭을 결정하는 속성 : 부모요소의 80%에서 600px 이상은 커지지 말아라 */
+  max-width: 600px;
+  /* 최소폭을 결정하는 속성 : 300px 이하로는 작아지지 말아라 */
+  min-width: 300px;
+  /* 양 옆 = auto / top : 30px / bottem : 0 */
+  margin:30px auto 0px auto;
+  padding: 30px;
   text-align: center;
   background-color: rgb(217, 241, 254);
-  border-radius: 20px;
+  border-radius: 10px;
+}
+
+.post-card > div:first-child {
+  margin-top: 0;
 }
 
 .snoopy-box{
