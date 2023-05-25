@@ -4,8 +4,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-
 li{
   list-style: none;
 }
@@ -49,7 +47,17 @@ background-color: skyblue;
 
 .gnb-item a{
   padding: 20px;
+  transition: color 500ms;
 }
+
+.gnb-item a:hover{
+  color: dodgerblue;
+}
+
+/* nav에 호버 했을 때 gnb-item이라는 클래스 안에 있는 a태그들한테 중괄호 안에 스타일을 적용 */
+/* nav:hover .gnb-item a{
+  color: rgb(191, 30, 255);
+} */
 
 .background{
   display: flex;
@@ -150,6 +158,22 @@ footer{
   padding-right: 20px;
 }
 
+.icon-item a i{
+  /* 300~500ms 정도 준다 / 0.5s=500ms */
+  transition: all 0.5s;
+}
+
+
+
+.icon-item a:hover i{
+  color: dodgerblue;
+  /* 커서를 놓았을 떄 아이콘이 커지는 속성 (원래의 크기의 1.2배 확대하겠다 */
+  /* transform: scale(1.2); */
+
+  /* 커서를 놓았을 떄 아이콘이 회전하는 속성*/
+  transform: rotate(180deg);
+}
+
 .icon-item :last-child a {
  padding-right:0;
 }
@@ -164,19 +188,21 @@ footer{
   color:  rgb(41, 127, 161);
 }
 
-
 .top-btn{
   position: fixed;
   bottom: 30px;
   right: 30px;
 }
 
-
 .top-btn i{
   font-size: 38px;
   color:  rgb(41, 127, 161);
+  transition: 500ms;
 }
 
+.top-btn i:hover{
+  color: palevioletred;
+}
 
 .side-munu{
 position: fixed;
@@ -196,4 +222,10 @@ right: 50px;
   display: inline-block;
   padding: 10px 0;
   color: #888;
+  transition: all 500ms;
+}
+
+.side-munu-item a:hover{
+  color: dodgerblue;
+  text-decoration:underline;
 }
