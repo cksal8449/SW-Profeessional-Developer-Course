@@ -4,9 +4,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-i{
-  font-size: 48px;
-}
+
 
 li{
   list-style: none;
@@ -106,32 +104,29 @@ background-color: skyblue;
   margin-top: 0;
 }
 
-.snoopy-box{
+.fixed-back{
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 800px;
-  background-color:rgb(217, 241, 254) ;
+  align-content: center;
+  height: 600px;
+  background-color: rgb(217, 241, 254);
 }
 
-.snoopy{
-  width: 1200px;
-  height: 600px;
+.fixed-back-img{
+  width: 1000px;
+  height: 500px;
   background-color: #fff;
   background-image: url(../images/스누피2.png);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size:inherit;
-  background-attachment: fixed;
-}
-
-.scroll{
-  height: 1000px;
+  background-size: 500px;
+  background-position: center bottom;
+  /* px, % */
+  background-position: content bottom;
+  background-attachment:fixed;
 }
 
 footer{
   background-color: skyblue;
-  
 }
 
 .global-footer{
@@ -140,20 +135,26 @@ footer{
   width: 90%;
   margin: 0 auto;
   padding: 20px 0;
-  /* color: #fff; */
 }
 
-.Contact{
+.global-footer h3{
   color: #fff;
 }
 
-
-.footer-list{
+.icon-list{
   display: flex;
 }
 
-.footer-item{
-  margin-right: 20px;
+.icon-item a{
+  padding-right: 20px;
+}
+
+.icon-item :last-child a {
+ padding-right:0;
+}
+
+.icon-item i{
+  font-size: 24px;
 }
 
 .circle-arrow-up{
@@ -162,7 +163,4 @@ footer{
   color:  rgb(41, 127, 161);
 }
 
-.footer-item:last-child{
-  margin-right: 0;
-}
 
