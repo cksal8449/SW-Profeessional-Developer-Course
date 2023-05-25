@@ -176,3 +176,23 @@ footer{
   color:  rgb(41, 127, 161);
 }
 
+
+.side-munu{
+position: fixed;
+top: 150px;
+right: 50px;
+}
+
+.side-munu-list{
+  width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888;
+  text-align: center;
+}
+
+.side-munu-item a{
+  display: inline-block;
+  padding: 10px 0;
+  color: #888;
+}
