@@ -163,8 +163,6 @@ footer{
   transition: all 0.5s;
 }
 
-
-
 .icon-item a:hover i{
   color: dodgerblue;
   /* 커서를 놓았을 떄 아이콘이 커지는 속성 (원래의 크기의 1.2배 확대하겠다 */
