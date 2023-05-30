@@ -76,17 +76,16 @@ h1:hover + p {
   .box4{ 
   background-color: yellowgreen;
   transition: transform 4s ease-out;
-}
+  }
 
   .box5{ 
   background-color:blueviolet;
   transition: transform 4s ease-in-out;
-}
+  }
 
-
-.title:hover ~.box {
+.title:hover ~ .box {
   transform: translateX(500px)
-}
+  }
 
 </style>
 <body>
@@ -100,12 +99,12 @@ h1:hover + p {
     <p class="parents2">부모의 형제요소</p>
     
     <div class="box-wrapper">
-      <h1 class="titlw">timing-funtion 비교</h1>
-    <div class="box box1">ease</div>
-    <div class="box box2">linear</div>
-    <div class="box box3">ease-in</div>
-    <div class="box box4">ease-out</div>
-    <div class="box box5">ease-in-out</div>
+      <h1 class="title">timing-funtion 비교</h1>
+      <div class="box box1">ease</div>
+      <div class="box box2">linear</div>
+      <div class="box box3">ease-in</div>
+      <div class="box box4">ease-out</div>
+      <div class="box box5">ease-in-out</div>
    </div>
   </div>
   
