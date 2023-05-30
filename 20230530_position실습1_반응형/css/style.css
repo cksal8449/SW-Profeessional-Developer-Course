@@ -1,0 +1,386 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 웹 접근성을 높이기 위해 사용 (스크린 리더기) */
+.visually-hidden{
+  display: none;
+}
+
+header{
+  height: 80px;
+}
+
+header nav{
+display: flex;
+justify-content: space-between;
+align-items: center;
+/* position: fixed를 주면 width값이 본인이 가진 콘텐츠 만큼 줄어든다. */
+position: fixed;
+top:0;
+z-index: 10;
+width: 100%;
+height: 80px;
+padding: 10px 20px;
+box-sizing: border-box;
+background-color: skyblue;
+}
+
+.logo img{
+ width: 50px;
+}
+
+.gnb-list{
+  display: flex;
+}
+
+.gnb-item a{
+  padding: 20px;
+  transition: color 500ms;
+}
+
+.gnb-item a:hover{
+  color: dodgerblue;
+}
+
+/* nav에 호버 했을 때 gnb-item이라는 클래스 안에 있는 a태그들한테 중괄호 안에 스타일을 적용 */
+/* nav:hover .gnb-item a{
+  color: rgb(191, 30, 255);
+} */
+
+.background{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-image: url(../images/스누피배경.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+}
+
+
+.main-title{
+  font-size: 48px;
+}
+
+
+.main-content{
+  margin-top: 20px;
+}
+
+.main-btn{
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.post-card{
+  position: relative;
+  top: -50px;
+}
+
+.post-card > div {
+  width:80%;
+  /* 최대폭을 결정하는 속성 : 부모요소의 80%에서 600px 이상은 커지지 말아라 */
+  max-width: 600px;
+  /* 최소폭을 결정하는 속성 : 300px 이하로는 작아지지 말아라 */
+  min-width: 300px;
+  /* 양 옆 = auto / top : 30px / bottem : 0 */
+  margin:30px auto 0px auto;
+  padding: 30px;
+  text-align: center;
+  background-color: rgb(217, 241, 254);
+  border-radius: 10px;
+}
+
+.post-card > div:first-child {
+  margin-top: 0;
+}
+
+.fixed-back{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 600px;
+ 
+  background-color: rgb(217, 241, 254);
+}
+
+.fixed-back-img{
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  border: 10px solid rgb(217, 241, 254);
+  background-color: #fff;
+  background-image: url(../images/스누피2.png);
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: center bottom;
+  /* px, % */
+  background-position: content bottom;
+  background-attachment:fixed;
+}
+
+
+.fixed-back-img2{
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  border: 10px solid rgb(217, 241, 254);
+  background-color: #fff;
+  background-image: url(../images/pngegg.png);
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: center bottom;
+  /* px, % */
+  background-position: content bottom;
+  background-attachment:fixed;
+}
+
+footer{
+  background-color: skyblue;
+}
+
+.global-footer{
+  display: flex;
+  justify-content:space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.global-footer h3{
+  color: #fff;
+}
+
+.icon-list{
+  display: flex;
+}
+
+.icon-item a{
+  padding-right: 20px;
+}
+
+.icon-item a i{
+  /* 300~500ms 정도 준다 / 0.5s=500ms */
+  transition: all 0.5s;
+}
+
+.icon-item a:hover i{
+  color: dodgerblue;
+  /* 커서를 놓았을 떄 아이콘이 커지는 속성 (원래의 크기의 1.2배 확대하겠다 */
+  /* transform: scale(1.2); */
+
+  /* 커서를 놓았을 떄 아이콘이 회전하는 속성*/
+  transform: rotate(180deg);
+}
+
+.icon-item :last-child a {
+ padding-right:0;
+}
+
+.icon-item i{
+  font-size: 24px;
+}
+
+.circle-arrow-up{
+  margin: 0 auto;
+  z-index: 10;
+  color:  rgb(41, 127, 161);
+}
+
+.top-btn{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+.top-btn i{
+  font-size: 38px;
+  color:  rgb(41, 127, 161);
+  transition: 500ms;
+}
+
+.top-btn i:hover{
+  color: palevioletred;
+}
+
+.side-munu{
+position: fixed;
+top: 150px;
+right: 50px;
+}
+
+.side-munu-list{
+  width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888;
+  text-align: center;
+}
+
+.side-munu-item a{
+  display: inline-block;
+  padding: 10px 0;
+  color: #888;
+  transition: all 500ms;
+}
+
+.side-munu-item a:hover{
+  color: dodgerblue;
+  text-decoration:underline;
+}
+
+@media screen and (max-width : 1200px) {
+  .post-card{
+    top: 0 ;
+    margin-top: 30px;}
+
+    .fixed-back{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      height: 600px;
+      background-color: #fff;
+    }
+    
+    .fixed-back-img{
+      margin-top: 50px;
+      width: 100%;
+      height: 550px;
+      border: none;
+      background-color: rgb(217, 241, 254);
+      background-image: url(../images/스누피2.png);
+      background-repeat: no-repeat;
+      background-size: 500px;
+    }
+    
+    .fixed-back-img2{
+      margin-top: 0;
+      width: 0 ;
+      border: none;
+      background-image: url(none);
+    }
+}
+
+@media screen and (max-width : 768px) {
+  header{
+    height: 40px;
+  }
+  .logo img{
+    width: 40px;
+   }
+
+   .gnb-item a{
+    padding: 5px;
+  }
+  .gnb-list{
+   font-size: small;
+  }
+  .background{
+    margin-top: 30px;
+    height: 350px;
+  }
+
+  .main-title{
+    font-size: 32px;
+  }
+
+  .post-card > div {
+    width:80%;
+    max-width: 300px;
+    min-width: 300px;
+    margin:30px auto 0px auto;
+    font-size: small;
+  }
+
+  .fixed-back-img{
+    margin-top: 50px;
+    width: 100%;
+    height: 350px;
+    border: none;
+    background-color: rgb(217, 241, 254);
+    background-size: 350px;
+  }
+  .global-footer{
+    display: flex;
+    justify-content:space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  
+  .global-footer h3{
+    color: #fff;
+  }
+ 
+  
+  .icon-item :last-child a {
+   padding-right:0;
+  }
+  
+  .icon-item i{
+    font-size: 24px;
+  }
+  
+  .circle-arrow-up{
+    margin: 0 auto;
+    z-index: 10;
+    color:  rgb(41, 127, 161);
+  }
+  
+  .top-btn{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+  }
+  
+  .top-btn i{
+    font-size: 38px;
+    color:  rgb(41, 127, 161);
+    transition: 500ms;
+  }
+  
+  .top-btn i:hover{
+    color: palevioletred;
+  }
+  
+  .side-munu{
+    box-decoration:none;
+  position: fixed;
+  top: 150px;
+  right: 50px;
+  }
+  
+  .side-munu-list{
+    width: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #888;
+    text-align: center;
+  }
+  
+  .side-munu-item a{
+    display: inline-block;
+    padding: 10px 0;
+    color: #888;
+    transition: all 500ms;
+  }
+  
+}
