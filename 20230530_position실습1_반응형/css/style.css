@@ -285,69 +285,52 @@ right: 50px;
 }
 
 @media screen and (max-width : 768px) {
-  header{
-    height: 40px;
-  }
   .logo img{
     width: 40px;
    }
+  
+  .gnb-item a{
+    padding: 10px;
+  }
 
-   .gnb-item a{
-    padding: 5px;
-  }
-  .gnb-list{
-   font-size: small;
-  }
   .background{
-    margin-top: 30px;
-    height: 350px;
-  }
-
-  .main-title{
-    font-size: 32px;
-  }
-
-  .post-card > div {
-    width:70%;
-    max-width: 300px;
-    min-width: 300px;
-    margin:30px auto 0px auto;
-    font-size: small;
-  }
-
-  .fixed-back-img{
-    margin-top: 30px;
-    width: 100%;
     height: 300px;
-    border: none;
-    background-color: rgb(217, 241, 254);
-    background-size: 300px;
-  }
-
-  .global-footer{
-    display: flex;
-    justify-content:space-between;
-    width: 90%;
-    margin: 0 auto;
-    padding: 50px 0;
   }
   
-  .icon-item :last-child a {
-   padding-right:0;
+  .main-title{
+    font-size: 36px;
   }
+    
+    .post-card > div {
+      min-width: 300PX;
+      padding: 20px;
+    }
 
-  .circle-arrow-up{
-    margin: 0 auto;
-    z-index: 10;
-    color:  rgb(41, 127, 161);
-  }
-  
+    .fixed-back{
+      height: 250px;
+     
+    }
+    
+    .bgc-box{
+      height: 250PX;
+      background-size: 250PX;
+    }
+    
+    .global-footer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .icon-list{
+      margin-top: 10px;
+    }
+
+    .top-btn i{
+      font-size: 32px;
+    }
+
   .side-munu{
-    top: 0;
-    right: 0;
-  }
-  
-  .side-munu-list{
-    width: 0;
-  }
+    display: none;
+    }
 }
