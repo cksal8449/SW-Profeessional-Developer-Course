@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>맥도날드 반응형 </title>
     <link rel="stylesheet" href="./style.css">
+    <!-- Font Awesom -->
+    <script src="https://kit.fontawesome.com/0fd51a53f4.js" crossorigin="anonymous"></script>
+    <!-- Goole Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+   <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
+
+
 <body>
     <div class="wrapper">
         <header>
@@ -28,51 +43,55 @@
         </header>
 
         <main>
-            <section class="background">
-                <h2 class="visually-hidden">메뉴</h2>
-                <ul class="bgc-list">
-                    <li class="bgc-item"><a href="">Menu</a></li>
-                    <li class="bgc-item"><a href="">Store</a></li>
-                    <li class="bgc-item"><a href="">What's New</a></li>
-                    <li class="bgc-item"><a href="">Story</a></li>
-                </ul>
-            </section>
+          <section class="fixed-menu">
+            <h2 class="visually-hidden">메뉴</h2>
+            <ul class="bgc-list">
+                <li class="bgc-item"><a href="">Menu</a></li>
+                <li class="bgc-item"><a href="">Store</a></li>
+                <li class="bgc-item"><a href="">What's New</a></li>
+                <li class="bgc-item"><a href="">Story</a></li>
+            </ul>
+          </section>
+
+            <section class="background-img"></section>
 
             <section class="post-card">
                 <div>
-                   <img src="./images/food.jpeg" alt="">
+                   <img class="card-img" src="./images/food.jpeg" alt="">
                    <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
                 </div>
                 <div>
-                    <img src="./images/food.jpeg" alt="">
+                    <img class="card-img" src="./images/food.jpeg" alt="">
                     <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
                  </div>
                  <div>
-                    <img src="./images/food.jpeg" alt="">
+                    <img class="card-img" src="./images/food.jpeg" alt="">
+                    <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
+                 </div>
+                 <br>
+                 <div>
+                    <img class="card-img" src="./images/food2.jpeg" alt="">
                     <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
                  </div>
                  <div>
-                    <img src="./images/food2.jpeg" alt="">
+                    <img class="card-img" src="./images/food2.jpeg" alt="">
                     <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
                  </div>
                  <div>
-                    <img src="./images/food2.jpeg" alt="">
+                    <img class="card-img" src="./images/food2.jpeg" alt="">
+                    <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
+                 </div>
+                 <br>
+                 <div>
+                    <img class="card-img" src="./images/food3.jpeg" alt="">
                     <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
                  </div>
                  <div>
-                    <img src="./images/food2.jpeg" alt="">
+                    <img class="card-img" src="./images/food3.jpeg" alt="">
                     <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
                  </div>
                  <div>
-                    <img src="./images/food3.jpeg" alt="">
-                    <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
-                 </div>
-                 <div>
-                    <img src="./images/food3.jpeg" alt="">
-                    <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
-                 </div>
-                 <div>
-                    <img src="./images/food3.jpeg" alt="">
+                    <img class="card-img" src="./images/food3.jpeg" alt="">
                     <p class="main-content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, harum!</p> 
                  </div>
                 
@@ -80,14 +99,18 @@
 
             <section>
               <div class="side">
-                <img class="품질이야기" src="./images/" alt="">
-                <h3>품질 이야기</h3>
-    
-                <img src="" alt="">
-                <h3>McDelivery</h3>
-    
-                <img src="" alt="">
-                <h3>TOP</h3>
+                <div>
+                <img class="side-img" src="./images/side1.png" alt="">
+                <p>품질 이야기</p>
+              </div>
+              <div>
+                <img class="side-img" src="./images/side2.jpeg" alt="">
+                <p>McDelivery</p>
+              </div>
+              <div>
+                <img class="side-img" src="./images/top.jpeg" alt="">
+                <p>TOP</p>
+              </div>
                </div>
             </section>
         </main>
@@ -95,7 +118,25 @@
           
 
            <div class="item-footer">
-            개인정보 처리 
+            <ul>
+              <li>개인정보 처리 방침</li>
+              <li>위치정보 이용약관</li>
+              <li>사이트맵</li>
+              <li>임차문의</li>
+            </ul>
+
+            <ul>
+              <li>한국맥도날드(유)</li>
+              <li>대표이사: 000</li>
+              <li>사업자 등록번로:101-81-26409</li>
+              <li>전화주문 1600-5252</li>
+            </ul>
+
+            <ul><a href=""></a><i class="fa-brands fa-instagram"></i></ul>
+            <ul><a href=""></a><i class="fa-brands fa-facebook"></i></ul>
+            <ul><a href=""></a><i class="fa-brands fa-youtube"></i></ul>
+            <ul><a href=""></a><i class="fa-regular fa-handshake"></i></ul>
+
            </div>
         </footer>
 
