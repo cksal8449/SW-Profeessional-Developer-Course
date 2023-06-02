@@ -132,6 +132,30 @@ margin: 0 auto;
   background-size: cover;
 }
 
-.item-footer{
+footer {
+  padding: 20px 0;
   background-color: red;
 }
+
+.item-footer{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 90%;
+ margin: 0 auto;
+ color: #fff;
+}
+
+.font-color{
+  color: yellow;
+}
+
+.item-footer i{
+  width: 50px;
+  height: 50px;
+  text-align:center; 
+  background-color: #fff;
+  border-radius: 100%;
+  color: red;
+}
+
