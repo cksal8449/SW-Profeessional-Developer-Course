@@ -26,10 +26,15 @@
 const hello = document.getElementById('hello');
 const btn = document.getElementById('btn');
 
-  document.getElementById('btn').addEventListener('click',function(){
-  document.getElementById('hello').innerHTML='ggggg';
-  document.getElementById('hello').style.color = 'red' ;
+btn.addEventListener('click', function(){
+  hello.innerHTML = 'ggggg';
+  hello.style.color = 'red';
 })
+
+//   document.getElementById('btn').addEventListener('click',function(){
+//   document.getElementById('hello').innerHTML='ggggg';
+//   document.getElementById('hello').style.color = 'red' ;
+// })
 
     // document.getElementById('hello').innerHTML = 'Hollo!'
     // document.getElementById('hello').style.color ='green'
