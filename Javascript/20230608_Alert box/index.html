@@ -8,7 +8,18 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="wrapper"></div>
+  <!-- UI 변경 할 때 
+  1. HTML, CSSFH 디자인 (필요하다면 화면상에 숨겨준다.)
+  2. 필요할 때 자바스크립트 숨긴 요소 보여달라고 코드를 작성
+  -->
+
+  <div class="wrapper">
+      <div class="alert-box" id="alert">
+      <p>Alert</p>
+      <button id="close-btn" type="button">X</button>
+    </div>
+    <button id="open-btn" type="button">Open</button>
+  </div>
   <script src="./script.js"></script>
 </body>
 </html>
