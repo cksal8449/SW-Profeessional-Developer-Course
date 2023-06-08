@@ -328,19 +328,18 @@ padding: 5px 0;
     justify-content: center;
     margin-top: 0px;
   }
+
   
   .food-box-item {
     width: 90%;
-    margin: 20px auto 0 auto;
+    margin: 20px auto 0;
   }
   
-  .food-box-item:first-child{
-    margin-top: 0;
+
+  .food-box > .food-box-list:first-child > .food-box-item :first-child{
+    margin-top: auto;
   }
 
-  .food-box-item:last-child{
-    margin-right: auto;
-  }
   
   .food-box-txt {
     margin: 20px auto;
@@ -359,7 +358,6 @@ padding: 5px 0;
   height: 50px;
   }
 
-  
   .global-footer { 
     flex-wrap: wrap;
   }
