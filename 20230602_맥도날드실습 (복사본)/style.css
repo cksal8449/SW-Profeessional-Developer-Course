@@ -398,6 +398,12 @@ padding: 5px 0;
   padding: 32px 20px;
   background-color: #fff;
   transform: translateX(-200px);
+  transition: transform 300ms ease-in-out;
+  }
+
+
+  .sidebar.is-active {
+    transform: translateX(0)
   }
 
   .side-menu-item a {
@@ -422,6 +428,13 @@ padding: 5px 0;
     /* display: none은 transsition이 먹지 않는다. */
     /* ui animation 효과를 주고 싶다면  visibility 사용! */
     visibility: hidden;
+    opacity: 0;
     background-color: rgba(36, 65, 80, 0.5);
+    transition: all 300ms ease-in-out;
+  }
+
+  .overlay.is-active {
+    visibility: visible;
+    opacity: 1;
   }
 }
