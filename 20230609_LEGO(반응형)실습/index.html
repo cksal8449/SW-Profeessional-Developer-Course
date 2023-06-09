@@ -9,13 +9,123 @@
   <meta name="author" content="chanmi">
   <title>LEGO 반응형 실습</title>
   <link rel="stylesheet" href="./style.css">
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- font awesome -->
+<script src="https://kit.fontawesome.com/0fd51a53f4.js" crossorigin="anonymous"></script>
+<!-- goolg fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
   <div class="wrapper">
+    <header>
+      <nav>
+        <!-- M 햄버거 사이드바 메뉴 -->
+        <div class="sidebar-btn"><a href="">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+        </div>
 
-    
+        <!-- M, D, T 레고 로고 이미지 -->
+        <h1 class="logo">
+          <a href="./images/lego.png">
+            <img src="./images/logo.png" alt="logo-img">
+          </a>
+        </h1>
+
+        <!-- D, T 사이드 메뉴 -->
+        <div class="sm-only">
+        <ul class="gnb-list ">
+          <li><a href="">제품쇼핑</a></li>
+          <li><a href="">브랜드소개</a></li>
+          <li><a href="">고객지원</a></li>
+          <li><a href="">세일</a></li>
+        </ul>
+      </div>
+
+        <!-- M, T 돋보기 -->
+        <div class="gnb-icon-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <!-- T, D 레고머리 -->
+        <div class="gnb-icon-btn sm-only">
+          <!-- <img class="lego-img" src="./images/user.jpeg" alt="lego-img"> -->
+        </div>
+
+        <!-- T 장바구니, 로그아웃 로고 -->
+        <div class="gnb-icon-btn sm-only">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+
+        <!-- D 검색창 -->
+        <div class="sm-only">
+          <i class="fa-solid fa-magnifying-glass"></i> 
+          <P>스토어검색</P>
+          <ul>
+            <li>장바구니</li>
+            <li>로그아웃</li>
+           </ul>
+        </div>
+
+        
+
+      </nav>
+    </header>
+
+    <div class="lnb-wrapper">
+      <ul class="lnb-list">
+        <li class="lnb-item"><a href="">신제품</a></li>
+        <li class="lnb-item"><a href="">독점제품</a></li>
+        <li class="lnb-item"><a href="">행사</a></li>
+        <li class="lnb-item"><a href="">아이디어</a></li>
+        <li class="lnb-item"><a href="">베스트셀러</a></li>
+        <li class="lnb-item"><a href="">레어제품</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="main-wapper">
+        <section class="background"></section>
+
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-nav">
+        <h2 class="visually-hidden">사이드바 메뉴</h2>
+        <ul class="side-menu-list">
+          <li class="side-menu-item"><a href="">
+            <img src="./images/user.jpeg" alt="lego-img">
+            <span class="lego-overflow">레고레고레고레고레고레고레고레고</span></a></li>
+          <li class="side-menu-item"><a href="">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>레고 제품 쇼핑</span></a></li>
+          <li class="side-menu-item"><a href="">
+            <i class="fa-regular fa-face-smile"></i>
+           <span>레고 브랜드 소개</span></a></li>
+          <li class="side-menu-item"><a href="">
+            <i class="fa-solid fa-circle-info"></i>
+           <span>고객지원</span></a></li>
+
+        </ul>
+      </div>
+    </aside>
+
+    <div class="overlay"></div>
+
   </div>
-  <script src="./js/sidebar.js"></script>
-  <script src="./js/sidebarDrawer.js"></script>
+  <!-- <script src="./js/sidebar.js"></script>
+  <script src="./js/sidebarDrawer.js"></script> -->
 </body>
 </html>
