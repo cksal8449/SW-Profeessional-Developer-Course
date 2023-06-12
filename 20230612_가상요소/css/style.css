@@ -1,0 +1,123 @@
+.apple::after {
+  /* 가상요소 내용으로 인정하지 않음 
+    장식요소, 실존하지 않음
+    자바스크립트가 가상요소를 컨트롤 할수 없다.
+    p태그의 안에 만들어짐
+    닫을수 있는 태그란에 사용할 수 있다
+    이미지 태그는 안됨
+    기본값이 inline
+  */
+content: "다람쥐";
+/* 기본컬러 값 지정 */
+color: red;
+}
+
+.apple::before {
+  content: "ㅎㅎㅎ" ;
+  /* inline 요소를 block으로 변경 */
+  display: block;
+  background-color: red;
+  width: 200px;
+  height: 50px;
+}
+
+#bill {
+  /* border: 두께 종류 색깔(비필수); */
+  border: 1px solid black;
+  /*  collapse 붕괴, 퉁치다*/
+  border-collapse: collapse;
+}
+
+#bill td,
+#bill th{
+  border: 1px solid black;
+  /* em : 글자에 보편적으로 많이 사용하는 단위 
+  자신의 부모의 크기 대비 배수
+  기준 1em = 100%
+  ex) font-size: 2em;
+  */
+  /* rem : 부모가 아닌 기준점의 대비 배수 */
+  padding: 0.3em 1em;
+}
+
+#bill th {
+  background-color: #eee;
+}
+
+/*
+ 아이디가 bill인 녀석의 
+ 자손 중에서 각각 둘째인 녀석의 뒷부분
+ */
+#bill td:nth-of-type(2)::after {
+  content: "원";
+  margin-left: 0.3em;
+  font-size: 0.8em;
+  color: #555;
+}
+
+#modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+#modalwin {
+  background-color: #fff;
+  /* 모바일버전 280~320px */
+  /* 화면에 꽉차도 되나 450px 밑으로 작아지지 않게 max-width 설정 */
+  /* width: 100%; */
+
+  /* calc 계산하다
+  주의 점 : -연산자 앞뒤로 반드시 띄어쓰기를 해야한다
+  */
+  width: calc(100% - 20px);
+  max-width: 450px;
+
+
+  /* 엡솔루트 가운데로 보내기!! */
+  /* 부모 크기가 기준 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* 자기 크기가 기준 */
+  transform: translate(-50%, -50%);
+
+  border: 4px;
+  /* box-shadow: x y 블러값 색깔; */
+  box-shadow: 3px 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+#modalcl {
+  display: block;
+  width: 30px;
+  height: 30px;
+  /* 버튼 색없애기 */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+#modalcl::before,
+#modalcl::after{
+  content: "";
+  display: block;
+  width: 35px;
+  height: 3px;
+  background-color: red;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+#modalcl::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#modalcl::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
