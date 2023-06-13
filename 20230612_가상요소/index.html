@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
+    <div id="box">
+      Hello World! Hello World! Hello World!
+    </div>
+
+
     <!-- paragraph 문단 
     br태그는 강제 줄바꿈이다
     블록요소
@@ -47,6 +52,32 @@
 
     </div>
 
+    <script>
+      // 목표 : x자 버튼을 눌렀을 때 모달이 사라져야함.
+      // 1. #modalcl 이 클릭 당했을 때
+      // 2. #modal의 style 중 display:none; 으로 보여지지 않게 바꾼다.
+      // "=" : 오른쪽에 있는 내용을 왼쪽에 담아라
+      document.getElementById("modalcl").onclick = function(){
+        document.getElementById("modal").style.display ="none";
+      } ; 
 
+      // $("#modalcl").click(function(){
+      //   $("#modal").hide();
+      // });
+
+
+
+      //재료를 받아와서 두개를 얹어주는 함수
+      // f(x)=x+3
+
+      //declare a funtion 함수를 선언한다
+      // (재료 있을 수도 있고 없을 수도 있다.)
+    // function dum(x){
+    //   return x+2;
+    // }
+     // call a funtion 함수를 호출한다
+    // dum(5);
+
+    </script>
   </body>
 </html>

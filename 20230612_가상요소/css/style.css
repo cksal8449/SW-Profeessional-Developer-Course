@@ -1,3 +1,17 @@
+#box{
+  width: 20%;
+  height: 1.5em;
+  background-color: yellow;
+  /* 넘치는 글자 숨김 */
+  overflow: hidden;
+  /* 한 줄로 정렬 */
+  white-space: nowrap;
+  /* 넘치는 글자를 '...'으로 표현 */
+  text-overflow: ellipsis;
+}
+
+
+
 .apple::after {
   /* 가상요소 내용으로 인정하지 않음 
     장식요소, 실존하지 않음
@@ -67,6 +81,7 @@ color: red;
 
 #modalwin {
   background-color: #fff;
+  border-radius: 3px;
   /* 모바일버전 280~320px */
   /* 화면에 꽉차도 되나 450px 밑으로 작아지지 않게 max-width 설정 */
   /* width: 100%; */
@@ -99,6 +114,9 @@ color: red;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  /*
+   안에 들어갈 -가 absolut가 되어야하며 중앙에 위치해야 하기때문에 position: relative; 지정
+ */
   position: relative;
 }
 
@@ -112,7 +130,10 @@ color: red;
   position: absolute;
   left: 50%;
   top: 50%;
+  /* transition: 스타일명 시간; */
+  transition: all 0.4s;
 }
+
 
 #modalcl::before {
   transform: translate(-50%, -50%) rotate(45deg);
@@ -120,4 +141,25 @@ color: red;
 
 #modalcl::after {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* #modalcl에 마우스를 올렸을때 
+그녀석의 before와 after
+*/
+/* 띄어쓰기 할 경우 해석 : #modalcl에 마우스를 올렸을때 
+그녀석의 자손 중 누군가의 before
+*/
+/* 띄어쓰기가 자손을 뜻하기 때문에 띄어주기 주의 해야한다 */
+#modalcl:hover::before {
+  transform: translate(-50%,-50%) rotate(0deg);
+  margin-top: -5px;
+  width: 20px;
+  height: 3px;
+}
+
+#modalcl:hover::after {
+  transform: translate(-50%,-50%) rotate(0deg);
+  margin-top: 5px;
+  width: 20px;
+  height: 3px;
 }
