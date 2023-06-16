@@ -4,7 +4,18 @@
   box-sizing: border-box;
 }
 
-#bc a{
+#bc a {
   text-decoration: none;
   color: #444;
+}
+
+.caret-righ {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  border-left: 8px solid #888;
+  border-top: 6px transparent;
+  border-bottom: 6px transparent;
+  box-sizing: border-box;
+  margin: 0 4px;
 }
