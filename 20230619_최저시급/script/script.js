@@ -21,7 +21,7 @@ const timeElem = document.getElementById("time")
 let timeValue = +timeElem.value 
 // 숫자일 경우 , string -> number 형변환 
 //  praseInt(value) string -> number 형변환
-// 
+//  ==같다. ===같다. (타입체크, 같은 형식인지)
 console.log(time.value)
 
 // 결과 계산 - 근무시간 x 최저시급
