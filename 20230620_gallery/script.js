@@ -6,7 +6,7 @@ const images = document.querySelector('.images')
 
 // 배열로 만들어줌 Array.from(배열을 만들 리스트)
 const items = Array.from(images.querySelectorAll('.img-item'))
-console.log(items)
+// console.log(items)
 
 
 // items라는 배열을 반복문을 실행
@@ -15,9 +15,24 @@ console.log(items)
 items.forEach((item) => {
     // 배열 요소중에 사용자가 어떤걸 클릭했는지 알아서 감지
   item.addEventListener('click', () => {
+    // 만약에 현재 클릭한 요소에 active가 있다면 
+    // classList.contains() 메소드는 현재 해당 class를 보유했는지 판단 - true / false
+    const hasClassActive = item.classList.remove('active') //true / false
+
+    if(item.classList.contains('active')){
+    // active class 제거 
+    item.classList.remove('active')
+    }else{
+    // active가 없는 요소를 클릭했을 경우
     // 모든 아이템에서 activ 클래스 제거 
     items.forEach(item => item.classList.remove('active'))
     // 해당 아이템에 active 부여
    item.classList.add('active')
+  }
   })
 })
+
+// classList
+
+// 무언가 있는지 판단
+// classList.contain
