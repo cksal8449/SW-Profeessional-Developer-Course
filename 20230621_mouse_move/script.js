@@ -1,5 +1,6 @@
-const pointer = document.getElementById('pointer')
-console.log(pointer)
+// app
+const app = document.getElementById('app')
+// console.log(pointer)
 
 window.addEventListener('mousemove',(event) => {
 // console.log('마우스 좌표 x값:'+event.clientX, '마우스 좌표 y값:'+event.clientY)
@@ -20,4 +21,27 @@ pointer.style.left = `${event.clientX-(pointer.offsetWidth / 2)}px`;
 // 좌우상하 1px씩 제외한 34px만 인식을 한다.
 // console.log(pointer.clientWidth)
 console.log(pointer.offsetwidth)
+})
+
+let posX; //undifined, position x
+let posY; //undifined, position y
+
+
+// 클릭할때마다 생성
+window.addEventListener('click',(event) => {
+  const bubble = document.createElement('span')
+  posX = event.clientX
+  posY = event.clientY
+  bubble.classList.add('bubble')
+  bubble.classList.add('active')
+  app.appendChild(bubble)
+  console.log(bubble)
+
+  bubble.style.top = posY- (bubble.offsetHeight/2)+'px'
+  bubble.style.left = posX- (bubble.offsetWidth/2)+ 'px'
+
+  setTimeout(() => {
+    bubble.remove()
+  },1000)
+  console.log(bubble)
 })

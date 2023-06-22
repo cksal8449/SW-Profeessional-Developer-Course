@@ -18,6 +18,7 @@ html, body{
   width: 100vw;
   height: 100vh;
   background-color: hsl(200, 50%, 30%);
+  position: relative;
 }
 
 /* 커서 모양을 바꿈 */
@@ -57,18 +58,20 @@ cursor: none;
   content: '';
 }
 
-#bubble {
+#app .bubble {
+  position:fixed;
   display: block;
   width: var(--size);
   height: var(--size);
   border-radius: var(--size);
   background-color: white;
   opacity: 0;
+  /* opacity: 0; */
 }
 
-#pointer:active #bubble{
-opacity: 0;
-animation: bubble 1s ease-in-out forwards;
+#app .bubble.active {
+opacity: 1;
+animation: bubble 200ms ease-in-out forwards;
 }
 
 @keyframes bubble {
@@ -76,8 +79,11 @@ animation: bubble 1s ease-in-out forwards;
     opacity: 0;
     transform: scale(0);
   }
-  100%{
+  50%{
     opacity: 1;
+  }
+  100%{
+    opacity: 0;
     transform: scale(1.2);
   }
 }
