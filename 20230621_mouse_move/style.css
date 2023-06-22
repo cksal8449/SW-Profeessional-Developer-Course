@@ -75,13 +75,16 @@ animation: bubble 200ms ease-in-out forwards;
 }
 
 @keyframes bubble {
+  /* 0 */
   0%{
     opacity: 0;
     transform: scale(0);
   }
+  /* 500ms */
   50%{
     opacity: 1;
   }
+  /* 1000ms */
   100%{
     opacity: 0;
     transform: scale(1.2);

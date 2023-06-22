@@ -16,6 +16,7 @@ console.log(`마우스 X값: ${event.clientX},마우스 Y값: ${event.clientY}`)
 
 pointer.style.top = `${event.clientY-(pointer.offsetHeight / 2)}px`;
 pointer.style.left = `${event.clientX-(pointer.offsetWidth / 2)}px`;
+
 // clientWidth,clienthight의 경우에는 margin, boder 사이즈를 무시한다
 // clientWidth,clienthight는 bober(1px solid whith)포함 36px 사이즈를 인식하지 못하고, 
 // 좌우상하 1px씩 제외한 34px만 인식을 한다.
@@ -29,17 +30,29 @@ let posY; //undifined, position y
 
 // 클릭할때마다 생성
 window.addEventListener('click',(event) => {
+  // createElement를 이용해서 span태그 생성
   const bubble = document.createElement('span')
+  // 클릭했을때 position 결정
+  // 클릭했을때 positionX 좌표
   posX = event.clientX
+   // 클릭했을때 positionY 좌표
   posY = event.clientY
+
+  // bubble 클래스를 추가
   bubble.classList.add('bubble')
+
+   // active - 애니메이션 담당하고 있는 클래스
   bubble.classList.add('active')
+
+  // 기준이 되는 부모요소에  bubble을 추가
   app.appendChild(bubble)
   console.log(bubble)
 
+  // 클릭할때마다 bubble 요소의 좌표를 잡아준다.
   bubble.style.top = posY- (bubble.offsetHeight/2)+'px'
   bubble.style.left = posX- (bubble.offsetWidth/2)+ 'px'
 
+  // 일정시간 (1000ms -> 1초)마다 bubble 삭제
   setTimeout(() => {
     bubble.remove()
   },1000)
