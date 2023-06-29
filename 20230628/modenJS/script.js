@@ -208,3 +208,4 @@ console.log(doubleNumbers) //[2,4,6]
 
 const namedPokemon = Pokemons.map(Pokemons => Pokemons +',너로 정했다')
 console.log(namedPokemon)
+
