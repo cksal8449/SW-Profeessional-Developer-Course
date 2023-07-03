@@ -19,8 +19,6 @@ a {
   border: 1px solid transparent;
 }
 
-
-
 .title {
   width: 250px;
   margin: 30px 0 10px 10px;
@@ -31,9 +29,15 @@ a {
   border-radius: 10px;
 }
 
+.menu_box_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .menu_box {
   display: inline-block;
-  width: calc((100% - 80px) / 4);
+  width: calc((100% - 100px) / 4);
   margin: 20px 10px;
   padding: 10px;
   border-radius: 10px;
@@ -88,4 +92,22 @@ a {
 .count {
  font-size: 14px;
  color: #666;
+}
+
+@media screen and (max-width : 1200px) {
+  .menu_box {
+    width: calc((100% - 80px) / 3);
+  }
+}
+
+@media screen and (max-width : 768px) {
+  .menu_box {
+    width: calc((100% - 60px) / 2);
+  }
+}
+
+@media screen and (max-width : 560px) {
+  .menu_box {
+    width: calc(100% - 40px);
+  }
 }
