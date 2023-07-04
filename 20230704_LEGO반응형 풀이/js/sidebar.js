@@ -22,8 +22,8 @@ function openSidebar() {
 sidebarMenuButton.addEventListener('click', openSidebar)
 
 function closeSidebar() {
-  sidebar.classList.remove('is-active')
-  sidebarOverlay.classList.remove('is-active')
+  sidebar.classList.remove('is-active');
+  sidebarOverlay.classList.remove('is-active');
 }
 
 sidebarOverlay.addEventListener('click', closeSidebar)
