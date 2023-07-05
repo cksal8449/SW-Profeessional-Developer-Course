@@ -15,15 +15,37 @@
     <p class="hello">안녕</p>
   </div>
   <script>
+    // 예제1
     // javascript / jQuery HTML안 글자 '안녕' -> 'hello'
-    const hello = document.querySelector('.hello')
-    // console.log(hello)
+    // javascript
+    // querySelectorAll를 사용할때 [0] 인덱싱을 해준다
+    // document.querySelectorAll('.hello')[0].innerHTML ='hello'
+    // document.querySelectorAll('.hello')[1].innerHTML ='hello'
+    // document.querySelectorAll('.hello')[2].innerHTML ='hello'
 
-    hello.foreach(function(){
-      
+    // let hello = document.querySelectorAll('.hello')
+    // hello.forEach(function(changeColor){
+    //   changeColor.style.color = 'red';
+    // })
+    
+    // jQuery
+      $('.hello').html('hello');
+      $('.hello').css('color','red');
+    
+    // 예제2
+    // javascript 
+    // document.write
+    let names = ['짱구', '철수', '유리', '훈이', '맹구']
+    names.forEach(function(name){
+    // 첫번째 방법
+    document.write(`<h1>${name}</h1>`);
+    // 두번째 방법
+    document.write('<h2>'+ name +'</h2>');
     })
     
 
+    // jQuery
+    
   </script>
 </body>
 </html>
