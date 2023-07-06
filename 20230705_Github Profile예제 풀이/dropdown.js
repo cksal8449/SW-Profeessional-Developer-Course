@@ -8,6 +8,11 @@ let dropDownMenu = document.querySelector('.dropdown-menu');
 
 // console.log('13131')
 
-dropDownBtn.addEventListener('click', function(){
+
+//function(e){
+//e.preventDefault();
+// a태그가 있어도 이벤트가 렉없이 발생하게 함 
+dropDownBtn.addEventListener('click', function(e){
+  e.preventDefault();
   dropDownMenu.classList.toggle('active');
 })
