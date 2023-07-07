@@ -36,9 +36,23 @@ let slideList = document.querySelector('.slide-list');
 
 // 버튼 1 클릭 했을 때 이미지 (0) translateX
 // addEventListener('click')
+// 콜백함수
 btn1.addEventListener('click',function(){
   slideList.style.transform = 'translateX(0)'
 })
+
+// click 이벤트 추가하는 방법
+// 1.HTML onclick="함수"();
+// 2. 함수 생성 후, 이벤트 대상.addEventListener('click', 함수)
+// 3. 이벤트대상.addEventListener('click', funtion(){}) 콜백
+// 콜백함수를 가장 많이 씀
+
+// function 버튼1(){
+//   slideList.style.transform = 'translateX(0)'
+// }
+// btn1.addEventListener('click', 버튼1)
+
+
 // 버튼 2 클릭 했을 때 이미지 (1) translateX
 btn2.addEventListener('click',function(){
   slideList.style.transform = 'translateX(-100vw)'

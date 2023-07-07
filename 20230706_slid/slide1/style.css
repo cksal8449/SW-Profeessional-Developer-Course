@@ -19,8 +19,8 @@ li {
   width: 300vw;
   height: 600px;
   /* 이미지가 잘 땡겨지는지 확인 */
-  /* transform: translateX(-100vw);
-  transition: transform 1s; */
+  /* transform: translateX(-100vw); */
+  transition: transform 1s;
 }
 
 .slide-list li {
