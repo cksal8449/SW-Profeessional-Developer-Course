@@ -12,13 +12,13 @@ nextBtn.addEventListener('click', function(){
   // slideItems 배열 length의 -1보다 값이 작을 때
   if(cuurentSlide < slideItems.length -1){
     cuurentSlide++;
-    slideList.style.transform = `tanslateX(-${cuurentSlide* 100}vw)`
+    slideList.style.transform = `translateX(-${cuurentSlide * 100}vw)`
   }
 })
 
 prevBtn.addEventListener('click', function(){
   if(cuurentSlide > 0){
     cuurentSlide--;
-    slideList.style.trensform = 'tanslateX(-'+cuurentSlide*100+'vw)'
+    slideList.style.transform = 'translateX(-'+cuurentSlide * 100+'vw)'
   }
 })
