@@ -1,0 +1,35 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.gnb {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gnb li :hover {
+background-color: red;
+}
+
+.gnb li {
+  padding: 10px 0;
+}
+
+.gnb .sub {
+  background-color: #999;
+  }
