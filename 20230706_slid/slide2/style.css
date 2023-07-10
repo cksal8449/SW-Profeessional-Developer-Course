@@ -56,7 +56,7 @@ height: 100%;
   cursor: pointer;
 }
 
-.btn-group button.active {
+.btn-group button.activ {
   background-color: aquamarine;
 }
 
