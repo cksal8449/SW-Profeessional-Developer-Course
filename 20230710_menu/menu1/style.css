@@ -23,6 +23,7 @@ a {
 }
 
 .gnb > li {
+  position: relative;
   width: 25%;
   text-align: center;
 }
@@ -41,9 +42,10 @@ a {
   background-color: red;
 }
 
-
 .sub {
+  position: absolute;
   display: none;
+  width: 100%;
 }
 
 .sub li a{
