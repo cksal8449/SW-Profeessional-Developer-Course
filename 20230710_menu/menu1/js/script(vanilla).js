@@ -11,9 +11,11 @@ item.addEventListener('mouseover', function(){
   this.querySelector('a').classList.add('on');
 })
 
-// mousleave
-item.addEventListener('mouseover', function(){
+// mouseleave
+ // mouseleave
+item.addEventListener('mouseleave', function(){
   subMenu.classList.remove('active');
   this.querySelector('a').classList.remove('on');
 })
 })
+
