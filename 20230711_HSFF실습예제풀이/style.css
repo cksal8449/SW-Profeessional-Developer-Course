@@ -75,10 +75,20 @@ font-size: 15px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  display: none;
+  /* 바닐라 자바스크립트 구현 위해 주석 처리 */
+  /* display: none; */
+  /* 바닐라 자바스크립트 구현 위해 항목추가 */
+  max-height: 0;
+  overflow: hidden;
+  /* ------------------------------------ */
   width: 200px;
   background-color: #fff;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 바닐라 자바스크립트 구현 위해 항목추가 */
+.sub.active {
+  max-height: 265px;
 }
 
 .sub::before {
