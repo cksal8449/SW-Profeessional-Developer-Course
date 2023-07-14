@@ -56,6 +56,7 @@ font-size: 15px;
   display: flex;
 }
 
+/* .square 기준 */
 .gnb-main-item {
   position: relative;
 }
@@ -71,6 +72,22 @@ font-size: 15px;
   padding: 16px;
 }
 
+.square {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+  display: none;
+  width: 10px;
+  height: 10px;
+  background-color: #113676;
+}
+
+.square.is-active {
+ display: block;
+}
+
 .sub {
   position: absolute;
   left: 50%;
@@ -80,6 +97,7 @@ font-size: 15px;
   /* 바닐라 자바스크립트 구현 위해 항목추가 */
   max-height: 0;
   overflow: hidden;
+  transition: max-height 500ms ease-in-out;
   /* ------------------------------------ */
   width: 200px;
   background-color: #fff;
@@ -101,6 +119,7 @@ font-size: 15px;
   height: 10px;
   background-color: #113676;
 } */
+
 
 .slide-wrapper {
   position: relative;
