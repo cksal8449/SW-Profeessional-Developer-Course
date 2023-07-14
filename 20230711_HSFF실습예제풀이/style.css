@@ -61,7 +61,7 @@ font-size: 15px;
 }
 
 .gnb-main-item a:hover,
-.gnb-main-item a.active {
+.gnb-main-item a.on {
   color: darkblue;
 }
 
@@ -91,7 +91,7 @@ font-size: 15px;
   max-height: 265px;
 }
 
-.sub::before {
+/* .sub::before {
   content: '';
   position: absolute;
   top: -5px;
@@ -100,7 +100,7 @@ font-size: 15px;
   width: 10px;
   height: 10px;
   background-color: #113676;
-}
+} */
 
 .slide-wrapper {
   position: relative;
