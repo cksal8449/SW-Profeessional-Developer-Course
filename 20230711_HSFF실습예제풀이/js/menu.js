@@ -32,3 +32,4 @@ gnbItems.forEach(function(item){
     this.querySelector('span').classList.remove('is-active')
   })
 })
+// 
