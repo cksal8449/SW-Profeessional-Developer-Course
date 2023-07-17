@@ -40,7 +40,7 @@ background-color: #ddd;
 }
 
 .submenu-wrapper {
-  /* display: none; */
+  display: none;
   background-color: cornflowerblue;
 }
 
