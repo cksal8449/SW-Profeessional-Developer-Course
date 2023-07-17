@@ -13,6 +13,10 @@ a {
   color: #555;
 }
 
+.wrapper {
+  position: relative;
+}
+
 .login-list {
   display: flex;
   justify-content: end;
@@ -77,9 +81,6 @@ a {
   text-align: left;
 }
 
-section {
-  position: relative;
-}
 
 .slide-wrapper {
   overflow: hidden;
@@ -166,3 +167,66 @@ section {
 .footer-under li {
   display: inline;
 }
+
+.is-active{
+  display: none;
+}
+ 
+.popup-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-box {
+  top: -100px;
+  margin: 0 auto;
+  border: 2px solid navy;
+  background-color: #fff;
+  width: 400px; 
+  padding: 15px;
+}
+
+.popup-btn {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 700;
+}
+
+.popup-box h3 {
+  color: blue;
+}
+
+.popup-box img {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  object-fit: cover;
+  width: 300px;
+}
+
+.pop-btn {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.pop-btn a {
+  font-size: small;
+  color: #fff;
+  background-color: cadetblue;
+  padding: 10px 50px ;
+}
+
+.pop-mobal-btn {
+  display: block;
+  border-top: 1px solid #ddd;
+  font-size: small;
+  padding: 15px 0 0 0;
+} 
