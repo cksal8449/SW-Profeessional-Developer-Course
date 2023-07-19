@@ -9,7 +9,7 @@ clearInterval(rgbBgcChange)
 }, 5000)
 
 
-// nc초 마다 코드를 실행하고 싶다면 => setInterval()
+// n초 마다 코드를 실행하고 싶다면 => setInterval()
 // setInterval(function(){},5000)
 
 // setTimeout() : n초 후에 코드를 실행하는 함수
@@ -23,6 +23,7 @@ clearInterval(rgbBgcChange)
 // ffffff : RGB 255 255 255 (white)
 // ff : 255 하나
 // toString(16) : 16진수로 변환
+
 // let hexBgcChange = setInterval(function(){
 //  let randomColor = '#' + Math.round(Math.random() * 0xffffff).toString(16);
 // //  console.log(randomColor)
@@ -52,3 +53,8 @@ let rgbBgcChange = setInterval(function(){
   document.querySelector('.count').style.backgroundColor = 'rgb('+ r +',' + g +','+ b + ')';
   console.log(r, g, b)
 },1000)
+
+
+
+  
+

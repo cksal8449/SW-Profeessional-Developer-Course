@@ -1,6 +1,7 @@
 // 1초 마다 5라는 값을 1씩 감소시킨다. 5 4 3 2 1
 // count가 0이 됐을 때는 감소하는 걸 멈춘다.
 
+// 5에서 카운트
 let count = 5;
 
 let timer = setInterval(function(){
