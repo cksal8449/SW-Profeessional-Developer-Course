@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Img modal</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- jQuery CDN-->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrapper">
+  <ul class="modal-list">
+    <li class="open-btn">모달열기</li>
+    <li><img src="./images/img1 (1).jpg" alt=""></li>
+    <li><img src="./images/img2.jpg" alt=""></li>
+    <li><img src="./images/img3.jpg" alt=""></li>
+    <li><img src="./images/img4.jpg" alt=""></li>
+    <li><img src="./images/img5.jpg" alt=""></li>
+    <li><img src="./images/img6.jpg" alt=""></li>
+  </ul>
+
+  <div class="modal-box modal">
+    <div class="mobal-head">
+      <p>모달 타이틀</p>
+      <button type="button" class="modal-close close-btn">X</button>
+    </div>
+    <div class="modal-sec">
+      <img src="./images/img1 (1).jpg" alt="이미지1">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quod obcaecati harum, similique quidem illum sit, inventore quia numquam magni, assumenda quaerat. Ullam dicta vel sequi, porro maxime repellat fugiat.</p>
+    </div>
+  </div>
+
+  <div class="img-modal-box modal">
+    <button type="button" class="img-modal-btn close-btn">X</button>
+    <div class="img-modal-wrapper">
+      <img src="./images/img2.jpg" alt="이미지2">
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+  </div>
+  <script src="./js/script.js"></script>
+</body>
+</html>
