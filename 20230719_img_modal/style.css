@@ -49,7 +49,9 @@ a {
   border-radius: 15px;
 }
 
+
 .slide-overlay {
+  /* display: none; */
   position: fixed;
   left: 0;
   top:0;
@@ -59,6 +61,7 @@ a {
 }
 
 .title {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -67,13 +70,14 @@ a {
   height: 500px;
   background-color: #fff;
   border-radius: 10px;
-}
+  box-shadow: 5px 5px 10px;
+} 
 
-.title img {
-  margin: 0 auto;
-  width: 90%;
-  height: 250px;
-  object-fit: cover;
+.title-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #ddd;
+  padding: 20px 20px;
 }
 
 button {
@@ -82,4 +86,41 @@ button {
   background-color: transparent;
   text-align: center;
   font-size: 25px;
+}
+
+.title-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.title-list img {
+  border-radius: 25px;
+  width: 90%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.title-list p {
+  padding: 20px;
+}
+
+.sub-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px;
+}
+
+.title-img img {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
 }
