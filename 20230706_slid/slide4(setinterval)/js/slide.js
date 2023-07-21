@@ -10,7 +10,7 @@ buttons.forEach(function(btn, index){
 
     buttons.forEach(function(otherBtn){
       if(otherBtn !==btn && otherBtn.classList.contains('active')){
-        otherBtn.classList.remove('acrive');
+        otherBtn.classList.remove('active');
       }
     })
   })

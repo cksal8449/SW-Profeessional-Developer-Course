@@ -9,7 +9,7 @@ let currentSlide = 0;
 nextBtn.addEventListener('click' , function(){
   if(currentSlide < slideItems.length -1){
     currentSlide++;
-    slideList.style.transform = `translateX(-${currentSlide *100}vw)`
+    slideList.style.transform = `translateX(-${currentSlide * 100}vw)`
   }
 })
 

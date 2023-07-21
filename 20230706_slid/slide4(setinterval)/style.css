@@ -35,9 +35,10 @@ button {
 }
 
 .slide-text {
-  position: absolute;
-  top:50%;
-  left: 50%;
+  /* position: absolute; */
+  width: 100%;
+  /* top:-25%;
+  left: 50%; */
   transform: translate(-50%, -50%);
 }
 
@@ -50,27 +51,30 @@ button {
 }
 
 .circle-group button {
-  border: 1px solid #fff ;
+  border: 1px solid rgba(255, 255, 255, 0.5) ;
   width: 15px;
   height: 15px;
   border-radius: 50%;
 }
 
 .circle-group button.active {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .btn-group button {
   position: absolute;
-  top:50%;
+  top: 50%;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.5);
   font-size: 50px;
-  padding: 0 20px;
 }
+
+/* .btn-group button.active {
+  background-color: rgba(255, 255, 255, 0.5);
+} */
 
 .prev {
   left: 30px;
@@ -80,6 +84,6 @@ button {
   right: 30px;
 }
 
-.text2,.text3 {
+/* .text2,.text3 {
   display: none;
-}
+} */
