@@ -14,6 +14,8 @@ button {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  /* 페이드인 페이드아웃 될때 하얀 화면이 보여서 가리기 위함 */
+  background-color: #000;
 }
 
 .slide-item {
