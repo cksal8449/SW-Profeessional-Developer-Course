@@ -30,6 +30,30 @@ button i {
   font-size: 24px;
 }
 
+.line {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 5px;
+  background-color: aqua;
+}
+
+/* .progress-container {
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: 8px;
+  background-color: aqua;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 8px;
+  background-color: fuchsia;
+} */
+
 .box {
   height: 3000px;
   background-color: #ccc;
