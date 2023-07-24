@@ -45,20 +45,11 @@ window.addEventListener('scroll', function(){
   // documentElement == querySelector('html')
   let 문서스크롤양 = document.documentElement.scrollTop;
   let 문서높이 = document.querySelector('html').clientHeight;
-  let 문서스크롤높이 =document.querySelector('html').scrollHeight;
+  let 문서스크롤높이 = document.querySelector('html').scrollHeight;
   // console.log(문서스트롤양, 문서높이, 문서스크롤높이 )
 
-  if(문서스트롤양 + 문서높이 == 문서스크롤높이)
-  alert('전체스크롤 완료!')
+  if(문서스크롤양 + 문서높이 == 문서스크롤높이) {
+    alert('전체스크롤 완료!')
+  }
 })
 
-
-
-// document.querySelector('.wrapper').addEventListener('scroll', function(){
-//   let 전체스크롤양 = document.querySelector('.wrapper').scrollTop;
-//   let 전체높이 = document.querySelector('.wrapper').clientHeight;
-//   let 전체스크롤높이 = document.querySelector('.wrapper').scrollHeight;
-
-//   if(전체스크롤양 + 전체높이 == 전체스크롤높이)
-//   alert('전체스크롤 끝!');
-// })
