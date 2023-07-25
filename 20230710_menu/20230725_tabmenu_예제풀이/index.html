@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>탭메뉴</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <!-- 참고 사이트 -->
+  <!-- https://www.saichoiblog.com/javascript-tab-menu/ -->
+</head>
+<body>
+  <div class="wrapper">
+    <ul class="tab-list">
+      <li class="tab-item" data-list="1">tabmenu1</li>
+      <li class="tab-item" data-list="2">tabmenu2</li>
+      <li class="tab-item" data-list="3">tabmenu3</li>
+    </ul>
+    <div class="tab-content " data-order="1">
+      <p>텝메뉴 1 클릭시 보여줄 화면</p>
+    </div>
+    <div class="tab-content " data-order="2">
+      <p>텝메뉴 2 클릭시 보여줄 화면</p>
+    </div>
+    <div class="tab-content " data-order="3">
+      <p>텝메뉴 3 클릭시 보여줄 화면</p>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
