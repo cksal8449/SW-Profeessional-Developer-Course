@@ -1,0 +1,21 @@
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
+.overlay.is-active {
+  display: none;
+}
+
+.login-box {
+  background-color: #fff;
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.btn-primary {
+  top: 0;
+}
