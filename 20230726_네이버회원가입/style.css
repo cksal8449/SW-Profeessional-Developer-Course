@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+header {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 200px;
+}
+
+#Language {
+  height: 20px;
+}
+
+.main {
+  margin: 20px auto;
+  width: 450px;
+}
+
+.check-off {
+  display: inline;
+}
+
+.check-out {
+  display: none;
+}
+
+.main h2 {
+  display: block;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.sub {
+  margin: 30px auto;
+  width: 450px;
+}
+
+.sub-item {}
