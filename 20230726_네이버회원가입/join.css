@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+header {
+  width: 468px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 200px;
+}
+
+section {
+  width: 468px;
+  margin: 0 auto;
+}
