@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>네이버 회원가입 Join</title>
   <link rel="stylesheet" href="./join.css">
   <!--jQuery CDN -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -29,9 +29,9 @@
             -->
             <input type="text" name="userid">
             <div>@naver.com</div>
-          </label>
-          <p class="warn"></p>
-        </div>
+          </div>
+        </label>
+        <p class="warn"></p>
         </div>
 
         <div class="join-box-item userpw">
@@ -48,7 +48,7 @@
         </div>
 
         <div class="join-box-item userpw-chk">
-          <label for="">비밀번호 재확인
+          <label>비밀번호 재확인
             <div class="inputbox">
               <input type="password" name="userpw-chk">
               <div>
@@ -58,6 +58,7 @@
           </label>
           <p class="warn"></p>
         </div>
+
         <div class="join-box-item username">
           <label>이름
             <div class="inputbox">
@@ -66,6 +67,7 @@
           </label>
           <p class="warn"></p>
         </div>
+
         <div class="join-box-item birth">
           <label>생년월일
             <div class="three-box">
@@ -97,6 +99,7 @@
           </label>
           <p class="warn"></p>
         </div>
+
         <div class="join-box-item gender">
           <p>성별</p>
           <div class="three-box">
@@ -112,17 +115,18 @@
               <p>선택안함</p>
               <input type="radio" name="gender" value="2" id="no-gender">
             </div>
-            
           </div>
         </div>
+
         <div class="join-box-item usermail">
           <label>본인 확인 이메일<span class="text-sencondary">(선택)</span>  
           <div class="inputbox">
             <input type="text" name="usermail" id="email" placeholder="선택입력">
-          </div>
-          <p class="warn"></p>
+          </div> 
           </label>
+          <p class="warn"></p>
         </div>
+
         <div class="join-box-item phon">
           <p>휴대전화</p>
           <div class="inputbox">
@@ -136,14 +140,17 @@
               <option value="254">케나 +254</option>
             </select>
           </div>
+
           <div class="phonenum">
             <div class="inputbox">
               <input type="text" name="phonenum" placeholder="전화번호 입력">
             </div>
             <button type="button" id="veribtn" class="btn-primary">인증번호 받기</button>
           </div>
+
           <div class="inputbox disinput">
             <input disabled type="text" id="veritext" name="veritext" placeholder="인증번호 입력하세요">
+            <div></div>
           </div>
           <p class="warn"></p>
         </div>
@@ -154,14 +161,17 @@
             <div class="inputbox">
               <input type="text" placeholder="우편번호">
             </div>
-            <button type="button" class="btn-primary">우편번호찾기</button>
+            <button type="button" class="btn-primary">우편번호 찾기</button>
           </div>
+
           <div class="inputbox">
             <input type="text" placeholder="주소">
           </div>
+
           <div class="inputbox">
             <input type="text" placeholder="상세주소">
           </div>
+
           <div class="inputbox">
             <input type="text" placeholder="참고항목">
           </div>
@@ -169,9 +179,7 @@
         <button type="submit" id="joinbtn" class="btn-primary">가입하기</button>
       </form>
     </section>
-
   </div>
-
-  <script src="./join.js"></script>
+  <script src="./js/join.js"></script>
 </body>
 </html>

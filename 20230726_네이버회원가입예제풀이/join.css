@@ -3,42 +3,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 a {
   text-decoration: none;
   color: #333;
 }
-
 .global-header {
   display: flex;
   justify-content: center;
   margin: 40px 0;
 }
-
 .logo img {
   width: 240px;
 }
-
 .join-box-list {
   max-width: 468px;
   margin: 0 auto;
 }
-
 .join-box-item {
-  margin-bottom: 20px ;
+  margin-bottom: 20px;
 }
-
 .inputbox {
   display: flex;
   align-items: center;
-  border: 52px;
+  height: 52px;
   margin-top: 10px;
   padding: 10px 12px;
   background-color: #fff;
   border: 1px solid #dadada;
   cursor: pointer;
 }
-
 .inputbox input {
   width: 80%;
   height: 100%;
@@ -47,7 +40,6 @@ a {
   cursor: pointer;
   font-size: 18px;
 }
-
 .inputbox div {
   width: 20%;
   height: 100%;
@@ -55,24 +47,19 @@ a {
   justify-content: flex-end;
   align-items: center;
 }
-
 .inputbox p {
   margin-right: 5px;
 }
-
 .inputbox img {
   height: 24px;
 }
-
 .three-box {
   display: flex;
   justify-content: space-between;
 }
-
 .three-box .inputbox {
   width: calc((100% - 20px) / 3);
 }
-
 .inputbox select {
   width: 100%;
   font-size: 18px;
@@ -80,32 +67,30 @@ a {
   border: none;
   outline: none;
 }
-
 .gender .inputbox {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
-
-.gender input[type='radio'] {
+.gender input[type="radio"] {
   display: none;
 }
-
-.phonenum, .postnum {
+.phonenum,
+.postnum {
   display: flex;
-  align-items: center;  
+  align-items: center;
 }
-
 .phonenum .inputbox,
 .postnum .inputbox {
   width: calc(100% - 120px);
   margin-right: 5px;
 }
-
 .phonenum button,
 .postnum button {
   width: 115px;
   height: 52px;
   margin-top: 10px;
+  border: none;
+  cursor: pointer;
 }
 
 .disinput,
@@ -117,7 +102,7 @@ a {
 /* JS에서 인증번호 불일치 X 아이콘 */
 .disagree {
   position: relative;
-  display: inline;
+  display: inline-block;
   width: 15px;
   height: 15px;
   margin-left: 5px;
@@ -157,24 +142,24 @@ a {
   cursor: pointer;
 }
 
-.text-sencondary {
+.text-secondary {
   color: #8e8e8e;
 }
 
 .text-red {
- color: red;
+  color: red;
 }
 
 .text-green {
   color: #08a600;
 }
 
-.boder-red {
-  border-color: red ;
+.border-red {
+  border-color: red;
 }
 
-.boder-act {
-  border-color: #03c75a ;
+.border-act {
+  border-color: #03c75a
 }
 
 .warn {
