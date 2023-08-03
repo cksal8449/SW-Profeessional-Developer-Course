@@ -8,20 +8,22 @@ $('input').focusout(function(){
   $(this).parent('.inputbox').removeClass('border-act')
 }) 
 
-let idveri, pwveri, pwchkveri, nameveri, bitrveri, genderveri, phonveri, addressveri = false;
+let idveri = pwveri = pwchkveri = nameveri = bitrveri = genderveri = phonveri = addressveri = false;
+// console.log(idveri,addressveri)
+// mailveri은 선택사항이라 true
 let mailveri = true;
 
 // 아이디
-// .userid input에 focusout 됐을 때 입력된 값의 길이가 0이라면
+// .userid input에 focusout 됐을 때 입력된 값의 길이가 0이라면(조건)
 // .userid warn에 내용을 작성(실행문)
 $('.userid input').focusout(function(){
-  let userid = $(this).val();
+  let userId = $(this).val();
   // 최소 5글자 ~ 최대 8글자 사이 영문 소문자 + 숫자 포함
   let idExp= /^[a-z0-9]{5,8}$/
 
-  if(userid.length == 0){
+  if(userId.length == 0) {
     $('.userid .warn').html('<span class="text-red">필수정보 입니다.</span>')
-  } else if(!idExp.test(userId)) { 
+  } else if(!idExp.test(userId)) {
     $('.userid .warn').html('<span class="text-red">5~8자의 영문 소문자, 숫자만 사용 가능합니다.</span>')
   } else {
     idveri = true;
@@ -39,14 +41,16 @@ $('.userpw input').focusout(function(){
 
   if(userPw.length == 0) {
     $('.userpw .warn').html('<span class="text-red">필수정보 입니다.</span>')
+    $('.userpw .inputbox span').empty();
+    $('.userpw .inputbox img').attr('src', './images/m_icon_pw_step_01.png')
   } else if(!pwExp.test(userPw)) {
     $('.userpw .warn').html('<span class="text-red">8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</span>')
     $('.userpw .inputbox p').html('<span class="text-red">사용불가</span>');
-    $('.userpw .inputbox img').attr('src','./images/m_icon_pw_step_10.png')
+    $('.userpw .inputbox img').attr('src', './images/m_icon_pw_step_10.png')
   } else {
     pwveri = true;
     $('.userpw .warn').empty();
-    $('.userpw .inputbox p').html('<span class="text-green">안전</span>')
-    $('.userpw .inputbox img').attr('src','./images/m_icon_pw_step_04.png')
+    $('.userpw .inputbox p').html('<span class="text-green">안전</span>');
+    $('.userpw .inputbox img').attr('src', './images/m_icon_pw_step_04.png')
   }
 })
