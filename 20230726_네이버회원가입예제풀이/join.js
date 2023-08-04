@@ -226,4 +226,139 @@ $('.usermail input').focusout(function(){
 })
 
 // 휴대전화
-// .phonenum input에 focusout
+// .phonenum input에서 focusout 됐을 때
+// .phonenum input value length가 0이라면(조건)
+// .phonenum .warn에 text-red class '필수 정보입니다.
+$('.phonenum input').focusout(function(){
+  if($(this).val().length == 0) {
+    $('.phone .warn').html('<span class="text-red">필수정보 입니다.</span>')
+  } else {
+    $('.phone .warn').empty();
+  }
+}) 
+
+
+// #veribtn(인증번호 받기)를 클릭 했을 때
+// .phonenum input value에 숫자가 아닌 모든 문자를 제거하고,
+// 제거한 값을 변수에 담아서 input에 다시 넣어준다.
+$('#veribtn').on('click', function(){
+  let phoneVal = $('.phonenum input').val();
+  phoneVal = phoneVal.replace(/[^0-9]/g, '');
+  $('.phonenum input').val(phoneVal);
+
+  // .phonenum input value length가 10~11 자리가 아니라면(조건1)
+  // .phonenum input value 값이 숫자가 아닌 경우(조건2)
+  // 변수 두 개 선언 후 1,2번 조건을 모두 충족할 때만 값을 true로 준다.
+  // 10~11자리가 맞을 때 / 값이 숫자일 경우
+  let phoneLeng;
+  if(phoneVal.length < 10 || phoneVal.length > 11) {
+    phoneLeng = false;
+  } else {
+    phoneLeng = true;
+  }
+
+  let phoneNum;
+  if(isNaN(phoneVal)) {
+    phoneNum = false;
+  } else {
+    phoneNum = true;
+  }
+
+  // phoneLeng, phonNum 모두 true일 경우(조건)
+  // .phon .warn에 text-green class '인증번호를 발송했습니다~~'
+  // #veritext에 disabled false
+  // .inputbox에 .disinput class remove
+
+  // else
+  // .phon .warn에 text-green red '형식에 맞지 않는 번호입니다.'
+  // #veritext에 disabled true
+  // .inputbox에 .disinput class add
+  if(phoneLeng && phoneNum) {
+    $('.phone .warn').html('<span class="text-green">인증번호를 발송했습니다.(유효시간 30분)<br> 인증번호가 오지 않으면 입력하신 정보가 정확한지 확인하여 주세요. 이미 가입된 번호이거나, 가상전화번호는 인증번호를 받을 수 없습니다.</span>')
+    $('#veritext').attr('disabled',false);
+    $('#veritext').parent('.inputbox').removeClass('disinput')
+  } else {
+    $('.phone .warn').html('<span class="text-red">형식에 맞지 않는 번호입니다.</span>')
+    $('#veritext').attr('disabled',false);
+    $('#veritext').parent('.inputbox').addClass('disinput')
+  }
+
+  // 인증번호 일치 여부 조건
+  // #veritext에 focusout됐을 때 
+  // 입력된 인증번호가 '1234'와 같다면 (조건1)
+  // .phone .warn에 text-green class '인증 되었습니다.'
+  // this의 형제요소인 div를 비워서 span 태그가 보이지 않게 한다.
+  // this의 부모인 .inputbox에 border-red class remove
+  // phonveri = true;
+
+  // else
+  // .phone .warn에 text-red class'인증번호를 다시 확인해 주세요.'
+  // this의 형제요소인 div에 span 태그로 불일치, disagree(x)요소를 보여준다.
+  // this의 부모인 .inputbox에 border-red class add
+  $('#veritext').focusout(function(){
+    if($(this).val() == "1234") {
+      phonveri = true;
+      $('.phone .warn').html('<span class="text-green">인증 되었습니다.</span>')
+      $(this).next('div').empty();
+      $(this).parent('.inputbox').removeClass('border-red')
+    }else {
+      $('.phone .warn').html('<span class="text-red">인증번호를 다시 확인해 주세요.</span>')
+      $(this).next('div').html('<span class="text-red">불일치</span><span class="disagree"></span>')
+      $(this).parent('.inputbox').addClass('border-red')
+    }
+  })
+})
+
+// 주소
+// 다음 우편번호 서비스 검색 -> 예제 -> 예제 코드보기
+// 카카오에서 제공하는 주소찾기 API 활용
+// 행정자치부에서 제공하는 데이터 베이스를 바탕으로 업데이트 되므로 가장 최신 데이터
+// API란? Application Programming Interface
+// 프론트엔트(클라이언트)와 백엔드(서버)가 요청과 응답을 주고 받을 수 있도록 만들어진 체계
+function sample6_execDaumPostcode() {
+  new daum.Postcode({
+      oncomplete: function(data) {
+          // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+          // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+          // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+          var addr = ''; // 주소 변수
+          var extraAddr = ''; // 참고항목 변수
+
+          //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+          if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+              addr = data.roadAddress;
+          } else { // 사용자가 지번 주소를 선택했을 경우(J)
+              addr = data.jibunAddress;
+          }
+
+          // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+          if(data.userSelectedType === 'R'){
+              // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+              // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+              if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                  extraAddr += data.bname;
+              }
+              // 건물명이 있고, 공동주택일 경우 추가한다.
+              if(data.buildingName !== '' && data.apartment === 'Y'){
+                  extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+              }
+              // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+              if(extraAddr !== ''){
+                  extraAddr = ' (' + extraAddr + ')';
+              }
+              // 조합된 참고항목을 해당 필드에 넣는다.
+              document.getElementById("sample6_extraAddress").value = extraAddr;
+          
+          } else {
+              document.getElementById("sample6_extraAddress").value = '';
+          }
+
+          // 우편번호와 주소 정보를 해당 필드에 넣는다.
+          document.getElementById('sample6_postcode').value = data.zonecode;
+          document.getElementById("sample6_address").value = addr;
+          // 커서를 상세주소 필드로 이동한다.
+          document.getElementById("sample6_detailAddress").focus();
+      }
+  }).open();
+}

@@ -127,7 +127,7 @@
           <p class="warn"></p>
         </div>
 
-        <div class="join-box-item phon">
+        <div class="join-box-item phone">
           <p>휴대전화</p>
           <div class="inputbox">
             <select name="conuntry">
@@ -159,27 +159,28 @@
           <p>주소</p>
           <div class="postnum">
             <div class="inputbox">
-              <input type="text" placeholder="우편번호">
+              <input id="sample6_postcode" type="text" placeholder="우편번호">
             </div>
-            <button type="button" class="btn-primary">우편번호 찾기</button>
+            <button onclick="sample6_execDaumPostcode()" type="button" class="btn-primary">우편번호 찾기</button>
           </div>
 
           <div class="inputbox">
-            <input type="text" placeholder="주소">
+            <input id="sample6_address" type="text" placeholder="주소">
           </div>
 
           <div class="inputbox">
-            <input type="text" placeholder="상세주소">
+            <input id="sample6_detailAddress" type="text" placeholder="상세주소">
           </div>
 
           <div class="inputbox">
-            <input type="text" placeholder="참고항목">
+            <input id="sample6_extraAddress" type="text" placeholder="참고항목">
           </div>
         </div>
         <button type="submit" id="joinbtn" class="btn-primary">가입하기</button>
       </form>
     </section>
   </div>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="./join.js"></script>
 </body>
 </html>
