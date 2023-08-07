@@ -12,4 +12,24 @@ document.querySelectorAll('input').forEach(function(input){
 
 let idveri = pwveri = pwchkveri = nameveri = bitrveri = genderveri = phonveri = addressveri = false;
 let mailveri = true;
+// Essential Infomation
+let essenInfo = '<span class="text-red">필수 정보입니다.</span>'
+
+// 아이디
+document.querySelector('.userid input').addEventListener('focusout', function(){
+  let userID = this.value;
+  let idExp= /^[a-z0-9]{5,8}$/
+  let idWarn = document.querySelector('.userid .warn');
+
+  if(userID.length == 0) {
+    idWarn.innerHTML = essenInfo;
+  } else if(!idExp.test(userID)) {
+    // 정규식에 맞지 않을 때 = 조건이 참
+    idWarn.innerHTML = '<span class="text-red">5~8자의 영문 소문자, 숫자만 사용 가능합니다.</span>'
+  } else {
+    // 위 조건에 둘 다 해당하지 않고 값을 잘 입력 했을 때
+    idveri = true;
+    idWarn.innerHTML = '<span class="text-green">멋진 아이디네요!</span>'
+  }
+})
 
