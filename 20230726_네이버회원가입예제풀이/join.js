@@ -98,3 +98,14 @@ document.querySelector('.username input').addEventListener('focusout',function()
     nameWarn.innerHTML = '';
   }
 })
+
+// 생년월일
+let birthList = document.querySelectorAll('.birth-item')
+console.log(birthList)
+birthList.forEach(function(item){
+  item.addEventListener('focusout',function(){
+    let year = birthList[0].value;
+    let month = birthList[1].value;
+    let date = birthList[2].value;
+  })
+})
