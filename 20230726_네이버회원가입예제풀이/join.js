@@ -68,17 +68,19 @@ userPw.addEventListener('focusout', function(){
 document.querySelector('.userpw-chk input').addEventListener('focusout', function(){
   let userpwChk = this.value;
   let pwChkWarn = document.querySelector('.userpw-chk .warn');
-  let pwChkImg = document.querySelector('.userpw-chk inputbox img')
+  let pwChkImg = document.querySelector('.userpw-chk .inputbox img');
 
   if(userpwChk.length == 0) {
     pwChkWarn.innerHTML = essenInfo;
   } else if(userpwChk == userPw.value) {
     pwchkveri = true;
     pwChkWarn.innerHTML = '';
-    pwChkImg.src ='./images/m_icon_pw_step_07.png';
+    pwChkImg.src = './images/m_icon_pw_step_07.png';
   } else {
-    // 위 조건에 둘 다 해당하지 않고 값을 잘 입력 했을 때
-    idveri = true;
-    idWarn.innerHTML = '<span class="text-green">멋진 아이디네요!</span>'
+    // 입력 했는데 .userpw value랑 일치하지 않을 때
+    pwChkWarn.innerHTML = '<span class="text-red">비밀번호가 일치하지 않습니다.</span>'
+    pwChkImg.src = './images/m_icon_pw_step_02.png';
   }
 })
+
+// 이름
