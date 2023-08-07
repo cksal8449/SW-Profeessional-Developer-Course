@@ -148,7 +148,10 @@ genderInputs.forEach(function(input){
       item.classList.remove('btn-primary');
       item.querySelector('input[type="radio"]').cheked = false;
     })
+    genderveri= true;
     this.classList.add('btn-primary');
     this.querySelector('input[type="radio"]').cheked = true;
   })
 })
+
+// 본인확인 이메일
