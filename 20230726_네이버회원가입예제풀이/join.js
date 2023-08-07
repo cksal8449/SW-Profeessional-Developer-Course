@@ -136,4 +136,4 @@ birthList.forEach(function(item){
       birthWarnTxt('');
     }
   })
-})
+}) 
