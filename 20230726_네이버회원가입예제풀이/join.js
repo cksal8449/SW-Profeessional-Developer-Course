@@ -282,3 +282,16 @@ function sample6_execDaumPostcode() {
 }
 
 
+// 가입하기 버튼 제출
+document.getElementById('joinbtn').addEventListener('click', function(e){
+  let isTrue = idveri && pwveri && pwchkveri && nameveri && bitrhveri && genderveri && mailveri && phoneveri && addressveri;
+
+  if(isTrue) {
+    document.getElementById('join-form').submit();
+  } else {
+    e.preventDefault();
+    document.querySelectorAll('input').forEach(function(input){
+      input.dispatchEvent(new Event('focusout'));
+    })
+  }
+})
