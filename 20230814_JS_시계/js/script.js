@@ -33,7 +33,8 @@ setInterval(function(){
     snum = '0' + sec;
   }
 
-  document.querySelector('.phone-time').innerHTML =`${hnum} : ${mnum} : ${sec}`;
+  document.querySelector('.phone-time').innerHTML =`${hnum} : ${mnum} : ${snum}`;
 
   // 2. padStart() method
 }, 1000)
+
