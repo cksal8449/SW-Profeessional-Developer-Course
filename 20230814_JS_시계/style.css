@@ -55,18 +55,24 @@ body {
   position: absolute;
   top: 45px;
   left: 15px;
+  z-index: -1;
   width: 800px;
   opacity: 0.8;
-  z-index: -1;
+  animation-name: cloud1;
+  animation-duration: 100s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite ;
 }
 
 .wrapper > img:nth-child(2) {
   position: absolute;
   top: 20px;
   left: 0;
+  z-index: -1;
   width: 1000px;
   opacity: 0.6;
-  z-index: -1;
+  /* name | duration | timing-funtion | count */
+  animation: cloud2 60s linear infinite;
 }
 
 .glober-header {
@@ -193,12 +199,15 @@ body {
   top: 0;  
   left: 0;
   width: 360px;
+  /* name | duration | timing-funtion | count */
+  animation: cloud-p1 80s linear infinite;
 }
 
 #phone img:last-of-type {
   top: 10px;
   left: 10px;
   width: 800px;
+  animation: cloud-p2 80s linear infinite;
 }
 
 .btn-wrapper {
@@ -241,7 +250,6 @@ body {
   background-color: #111;
 }
 
-
 /* wrappper에 night class가 있을때 화면 */
 .wrapper.night .logo {
   background-image: url(./images/logo_w.png);
@@ -266,4 +274,52 @@ body {
 
 .wrapper.night .phone-time {
   color: #fff;
+}
+
+@keyframes cloud1 {
+  0% {
+    left: -100vw;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes cloud2 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 1200px;
+  }
+  60% {
+    left: -1200px;
+  } 
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes cloud-p1 {
+  0% {
+    left: -600px;
+  }
+  100% {
+    left: 600px;
+  }
+}
+
+@keyframes cloud-p2 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 500px;
+  }
+  60% {
+    left: -500px;
+  }
+  100% {
+    left: 0;
+  }
 }
