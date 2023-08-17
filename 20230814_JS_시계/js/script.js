@@ -1,3 +1,6 @@
+let now = new Date();
+let hr = now.getHours();
+
 // new Date()
 // let now = new Date();
 // console.log(now)
@@ -48,5 +51,30 @@ setInterval(function(){
 
   // 1자리 수일때 앞에 0이 찍히는지 확인
   // console.log(sec)
+
+  document.querySelector('.phone-time').innerHTML = hr + ' : ' + min + ' : ' + sec
 }, 1000)
 
+
+
+// 시간에 맞춰서 배경이미지, 버튼 활성화
+// 1. 06-11 까지 **morning** background-image
+// 2. 12-15 까지 **afternoon** background-image
+// 3. 16-19 까지 **evening** background-image
+// 4. 20~ **night** background-image
+let btnList = document.querySelectorAll('.btn-list li');
+
+
+if(hr >= 6 && hr < 12) {
+  document.querySelector('.wrapper').classList.add('marning');
+  btnList[0].classList.add('on');
+} else if(hr >= 12 && hr < 16) {
+  document.querySelector('.wrapper').classList.add('afternoon');
+  btnList[1].classList.add('on');
+} else if(hr >= 16 && hr < 20) {
+  document.querySelector('.wrapper').classList.add('evening');
+  btnList[2].classList.add('on');
+}  else {
+  document.querySelector('.wrapper').classList.add('night');
+  btnList[3].classList.add('on');
+}
