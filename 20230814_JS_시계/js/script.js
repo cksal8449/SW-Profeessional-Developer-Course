@@ -10,31 +10,43 @@ setInterval(function(){
   let min = now.getMinutes();
   let sec = now.getSeconds();
   
-  // 1. 조건문 
-  // hr(시) 10보다 크거나 같을 때 (두자리 수)
-  if(hr >= 10) {
-    hnum = hr;
-  } else {
-    // 그렇지 않을 때 (한자리 수)
-    hnum = '0' + hr;
-  }
+  // // 1. 조건문 
+  // // hr(시) 10보다 크거나 같을 때 (두자리 수)
+  // if(hr >= 10) {
+  //   hnum = hr;
+  // } else {
+  //   // 그렇지 않을 때 (한자리 수)
+  //   hnum = '0' + hr;
+  // }
 
-  if(min >= 10) {
-    mnum = min;
-  } else {
-    // 그렇지 않을 때 (한자리 수)
-    mnum = '0' + min;
-  }
+  // if(min >= 10) {
+  //   mnum = min;
+  // } else {
+  //   // 그렇지 않을 때 (한자리 수)
+  //   mnum = '0' + min;
+  // }
 
-  if(sec >= 10) {
-    snum = sec;
-  } else {
-    // 그렇지 않을 때 (한자리 수)
-    snum = '0' + sec;
-  }
+  // if(sec >= 10) {
+  //   snum = sec;
+  // } else {
+  //   // 그렇지 않을 때 (한자리 수)
+  //   snum = '0' + sec;
+  // }
 
-  document.querySelector('.phone-time').innerHTML =`${hnum} : ${mnum} : ${snum}`;
+  // document.querySelector('.phone-time').innerHTML =`${hnum} : ${mnum} : ${snum}`;
 
   // 2. padStart() method
+  // 값.padStart(자리수, 채울 문자)
+  // 현재 문자열을 length가 자리수 보다 작을 경우 
+  // 채울 문자에 작성된 문자로 자리수 만큼 채워주는 method
+  // String(숫자) -> 숫자를 문자로 형변환 
+  hr = String(hr).padStart(2,'0');
+  min = String(min).padStart(2,'0');
+  sec = String(sec).padStart(2,'0');
+  // string이 찍히는지 확인 
+  // console.log(typeof(hr,min,sec));
+
+  // 1자리 수일때 앞에 0이 찍히는지 확인
+  // console.log(sec)
 }, 1000)
 
