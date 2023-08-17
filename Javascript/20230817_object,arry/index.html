@@ -24,6 +24,12 @@
 
     // Object{중괄호}
     // {key : value}
+    // Object 안에는 Array도 들어갈 수 있다
+    let school = {
+      computer : ['삼성', 'LG', 'APPLE', 'DELL'],
+      name : ['영희', '철수', '나래', '맹구']
+    }
+
     let sw = {
       computer : '삼성', 
       name : 'soonae'
@@ -43,7 +49,10 @@
     // Array는 자료간 순서가 존재, Object는 순서 개념 존재 X
     // Array는 자료간 정렬 / 자르기 기능 할 수 있다.
 
-    document.querySelector('.com').innerHTML = '내 컴퓨터는 ' + sw.computer+ '이고' + ' 내 이름은 ' + sw.name + '야.'
+    document.querySelector('.com').innerHTML = '내 컴퓨터는 ' + sw.computer+ '이고 ' + '내 이름은 ' + sw.name + '야.'
+    document.querySelector('.com').innerHTML = '내 컴퓨터는 ' + school.computer[2]+ '이고 ' + '내 이름은 ' + school.name[1] + '야.'
+
+   
 
 
   </script>
