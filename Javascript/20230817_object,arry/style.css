@@ -11,6 +11,7 @@
 .box-list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 90%;
   margin: 0 auto;
 }
@@ -20,6 +21,7 @@
   border: 1px solid #888;
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 15px;
 }
 
 .box-item img {
