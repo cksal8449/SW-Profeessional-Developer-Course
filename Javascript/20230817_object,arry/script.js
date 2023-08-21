@@ -65,3 +65,19 @@ item.querySelector('.sho-info h2').innerHTML = prodects[length].title;
 item.querySelectorAll('.sho-info p')[0].innerHTML = prodects[length].price;
 item.querySelectorAll('.sho-info p')[1].innerHTML = prodects[length].size;
 })
+
+// Javascript로 html 요소 생성
+// document.createElement('태그이름')
+let h1Tag = document.createElement('h1');
+// .box-list안에 h1태그 안에 보여질 텍스트
+h1Tag.innerHTML = '안녕하세요!';
+// h1태그에 hi라는 클래스명 부여
+h1Tag.classList.add('hi');
+// box-list의 자식요소로 h1태그 생성
+document.querySelector('.box-list').appendChild(h1Tag);
+
+// .box-list안에 p태그로 생성
+let pTag = document.createElement('p');
+pTag.innerHTML = 'p태그임!';
+pTag.classList.add('hello');
+document.querySelector('.box-list').appendChild(pTag);
