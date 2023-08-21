@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 li {
@@ -9,27 +8,25 @@ li {
 }
 
 .wrapper {
-position: relative;
+  position: relative;
 }
 
 .slide-wrapper {
-  width: 100vw;
   overflow: hidden;
 }
 
 .slide-list {
   display: flex;
-  /* viewport width *3(이미지 수) */
+  /* viewport width * 3(이미지 수) */
   width: 300vw;
-  height:100vh;
-  /* 이미지가 잘 땡겨지는지 확인 */
-  /* transform: translateX(-100vw); */
+  height: 100vh;
+  /* transform: translateX(-200vw); */
   transition: transform 1s;
 }
 
 .slide-list li {
-width: 100vw;
-height: 100%;
+  width: 100vw;
+  height: 100%;
 }
 
 .slide-list li img {
@@ -43,25 +40,24 @@ height: 100%;
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
+  /* display: flex;
+  justify-content: center;
+  margin-top: 10px; */
 }
 
 .btn-group button {
   width: 15px;
   height: 15px;
   margin-right: 5px;
-
   border: none;
-  background-color: rgb(0, 80, 255);
   border-radius: 50%;
-  cursor: pointer;
+  background-color: #fff;
 }
 
-.btn-group button.activ {
-  background-color: aquamarine;
+.btn-group button.active {
+  background-color: dodgerblue;
 }
 
 .btn-group button:last-child {
   margin-right: 0;
 }
-
-
