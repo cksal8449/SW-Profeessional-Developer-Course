@@ -152,11 +152,32 @@ item.querySelectorAll('.sho-info p')[1].innerHTML = prodects[length].size;
 // -------------------------------------------------------------------------------------
 
 // Javascript로 html 생성하는 방법2 (최신문법) 
-let pTag = '<p class="txt">html생성</p>';
-// .insertAdjacentHTML(추가 할 위치, 문자) => 문자형 html을 넣어주는 함수
-// 첫번째 파라미터 : 추가 할 위치 (beforeend = 안쪽 맨 밑)
-// 두번째 파라미터 : 추기할 html 문자(pTag)
-document.querySelector('.box-list').insertAdjacentHTML('beforeend', pTag)
-// 
+// let pTag = '<p class="txt">html생성</p>';
+// // .insertAdjacentHTML(추가 할 위치, 문자) => 문자형 html을 넣어주는 함수
+// // 첫번째 파라미터 : 추가 할 위치 (beforeend = 안쪽 맨 밑)
+// // 두번째 파라미터 : 추기할 html 문자(pTag)
+// document.querySelector('.box-list').insertAdjacentHTML('beforeend', pTag)
+// // 
 
+
+prodects.forEach(function(item){
 // .insertAdjacentHTML로 .box-item 생성
+let divItem = '<div class="box-item"></div>';
+document.querySelector('.box-list').insertAdjacentHTML('beforeend', divItem);
+
+// let boxImg = '<img src="boxImg.src" alt="boxImg.alt">';
+// boxImg.src = item.img;
+// boxImg.alt = item.title;
+// divItem.insertAdjacentHTML('beforeend', boxImg);
+
+let showInfo = '<div class="sho-info"></div>';
+divItem.insertAdjacentHTML('beforeend', showInfo);
+
+let boxTitle = '<h2></h2>';
+boxTitle.insertAdjacentHTML('beforeend', item.title);
+
+let boxPrice = '<p></p>';
+showInfo.insertAdjacentHTML('beforeend', item.price);
+let boxSize= '<p></p>';
+boxPrice.insertAdjacentHTML('beforeend', item.size);
+})
