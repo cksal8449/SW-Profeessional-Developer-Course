@@ -24,18 +24,36 @@ let prodects = [
     price : '76,300 원',
     size : ['230','240','250','260']
    },
-   {
-    img : 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9909210d-48ba-459e-96f4-faab32a41ce7/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-FBbeey7u.png',
-    title : '에어 조던 1 로우',
-    price : '139,000 원',
-    size : ['230','240','250','260']
-   },
+   // {
+   //  img : 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9909210d-48ba-459e-96f4-faab32a41ce7/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-%EC%97%AC%EC%84%B1-%EC%8B%A0%EB%B0%9C-FBbeey7u.png',
+   //  title : '에어 조던 1 로우',
+   //  price : '139,000 원',
+   //  size : ['230','240','250','260']
+   // },
    {
     img : 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1af9c87c-6e11-4bc6-ad66-648558bc49b7/%EB%B2%A0%EC%9D%B4%ED%8D%BC%ED%94%8C%EB%9D%BC%EC%9D%B4-3-%EB%82%A8%EC%84%B1-%EB%A1%9C%EB%93%9C-%EB%A0%88%EC%9D%B4%EC%8B%B1%ED%99%94-etsmVRmI.png',
     title : '나이키 베이퍼플라이 3',
     price : '59,000 원',
     size : ['230','240','250','260']
    },
+   {
+   img : 'https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/2554affc-8e73-4a3d-98a8-4b4a98d67a3e/%EB%8D%A9%ED%81%AC-%EB%A1%9C%EC%9A%B0-team-red-and-white-fj4555-100-%EC%B6%9C%EC%8B%9C%EC%9D%BC.jpg',
+   title : '우먼스 덩크 로우',
+   price : '139,000 원',
+   size : ['230','240','250','260']
+   },
+   {
+   img : 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ebd2113d-515e-42e6-bd84-2b56fbe7e4ce/%EB%A9%94%ED%8A%B8%EC%BD%98-9-%EC%97%AC%EC%84%B1-%EC%9A%B4%EB%8F%99%ED%99%94-TQn2uV9i.png',
+   title : '나이키 메트콘 9',
+   price : '139,000 원',
+   size : ['230','240','250','260']
+   },
+   // {
+   // img : 'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/074a1533-2083-4821-a7c4-4475b2b151f6/%EB%B2%A0%EC%9D%B4%ED%8D%BC%ED%94%8C%EB%9D%BC%EC%9D%B4-3-%EB%82%A8%EC%84%B1-%EB%A1%9C%EB%93%9C-%EB%A0%88%EC%9D%B4%EC%8B%B1%ED%99%94-etsmVRmI.png',
+   // title : '나이키 베이퍼플라이 3',
+   // price : '59,000 원',
+   // size : ['230','240','250','260']
+   //   },
 ]
 
 // console.log(prodects[0].title);
@@ -95,6 +113,7 @@ item.querySelectorAll('.sho-info p')[1].innerHTML = prodects[length].size;
 
 // createElement로 prodects lenght 만큼 html생성
 let boxList = document.querySelector('.box-list');
+
 prodects.forEach(function(item){
 // .box-list div 생성
 let divItem = document.createElement('div');
@@ -118,7 +137,12 @@ boxTitle.innerHTML = item.title;
 showInfo.appendChild(boxTitle);
 
 // // .sho-info 안에 p 2개 생성
+let boxPrice = document.createElement('p');
+boxPrice.innerHTML = item.price;
+showInfo.appendChild(boxPrice);
 
-
+let boxSize = document.createElement('p');
+boxSize.innerHTML = item.size;
+showInfo.appendChild(boxSize);
 })
 
