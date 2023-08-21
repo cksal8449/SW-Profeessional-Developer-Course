@@ -66,18 +66,59 @@ item.querySelectorAll('.sho-info p')[0].innerHTML = prodects[length].price;
 item.querySelectorAll('.sho-info p')[1].innerHTML = prodects[length].size;
 })
 
-// Javascript로 html 요소 생성
-// document.createElement('태그이름')
-let h1Tag = document.createElement('h1');
-// .box-list안에 h1태그 안에 보여질 텍스트
-h1Tag.innerHTML = '안녕하세요!';
-// h1태그에 hi라는 클래스명 부여
-h1Tag.classList.add('hi');
-// box-list의 자식요소로 h1태그 생성
-document.querySelector('.box-list').appendChild(h1Tag);
+// // Javascript로 html 요소 생성
+// // document.createElement('태그이름')
+// let h1Tag = document.createElement('h1');
+// // .box-list안에 h1태그 안에 보여질 텍스트
+// h1Tag.innerHTML = '안녕하세요!';
+// // h1태그에 hi라는 클래스명 부여
+// h1Tag.classList.add('hi');
+// // box-list의 자식요소로 h1태그 생성
+// document.querySelector('.box-list').appendChild(h1Tag);
 
-// .box-list안에 p태그로 생성
-let pTag = document.createElement('p');
-pTag.innerHTML = 'p태그임!';
-pTag.classList.add('hello');
-document.querySelector('.box-list').appendChild(pTag);
+// // .box-list안에 p태그로 생성
+// let pTag = document.createElement('p');
+// pTag.innerHTML = 'p태그임!';
+// pTag.classList.add('hello');
+// document.querySelector('.box-list').appendChild(pTag);
+
+
+
+// products length만큼 createElement로 html 생성
+// .box-list 안에 .box-item이라는 class를 가진 div 생성
+// .box-item 안 
+// 1. img tag 생성 src = products.img / alt = products.title
+// 2. .box-list 안에 .sho-info라는 class를 가진 div 생성
+// 3. .sho-info 안에 h2 tag 생성 => innerHTML = products.title
+// 4. .sho-info 안에 p tag 생성 => innerHTML = products.price
+// 5. .sho-info 안에 p tag 생성 => innerHTML = products.size
+
+// createElement로 prodects lenght 만큼 html생성
+let boxList = document.querySelector('.box-list');
+prodects.forEach(function(item){
+// .box-list div 생성
+let divItem = document.createElement('div');
+divItem.classList.add('box-item');
+boxList.appendChild(divItem);
+
+// .box-item 안에 img 생성 
+let boxImg = document.createElement('img');
+boxImg.src = item.img;
+boxImg.alt = item.title;
+divItem.appendChild(boxImg);
+
+// .box-item 안에 .sho-info div 생성
+let showInfo = document.createElement('div');
+showInfo.classList.add('sho-info');
+divItem.appendChild(showInfo);
+
+// // .sho-info 안에 h2 생성
+let boxTitle = document.createElement('h2');
+boxTitle.innerHTML = item.title;
+showInfo.appendChild(boxTitle);
+
+// // .sho-info 안에 p 2개 생성
+
+
+})
+
