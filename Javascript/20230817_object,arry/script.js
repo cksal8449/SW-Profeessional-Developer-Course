@@ -160,24 +160,25 @@ item.querySelectorAll('.sho-info p')[1].innerHTML = prodects[length].size;
 // // 
 
 
-prodects.forEach(function(item){
+prodects.forEach(function(item, index){
 // .insertAdjacentHTML로 .box-item 생성
-let divItem = '<div class="box-item"></div>';
-document.querySelector('.box-list').insertAdjacentHTML('beforeend', divItem);
+let boxItem = `<div class="box-item"></div>`;
+document.querySelector('.box-list').insertAdjacentHTML('beforeend', boxItem);
 
-// let boxImg = '<img src="boxImg.src" alt="boxImg.alt">';
-// boxImg.src = item.img;
-// boxImg.alt = item.title;
-// divItem.insertAdjacentHTML('beforeend', boxImg);
+let boxImg = `<img src="${item.img}" alt="${item.title}">`;
+document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', boxImg);
 
-let showInfo = '<div class="sho-info"></div>';
-divItem.insertAdjacentHTML('beforeend', showInfo);
+let showInfo = `<div class="sho-info"></div>`;
+document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', showInfo);
 
-let boxTitle = '<h2></h2>';
-boxTitle.insertAdjacentHTML('beforeend', item.title);
+let boxTitle = `<h2>${item.title}</h2>`;
+document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxTitle);
 
-let boxPrice = '<p></p>';
-showInfo.insertAdjacentHTML('beforeend', item.price);
-let boxSize= '<p></p>';
-boxPrice.insertAdjacentHTML('beforeend', item.size);
+let boxPrice = '<p>${item.price}</p>';
+document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxPrice);
+
+let boxSize = '<p>${item.size}</p>';
+document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxSize);
 })
+
+// insertAdjacentHTML / baxktick 사용
