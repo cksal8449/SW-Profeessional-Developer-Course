@@ -16,3 +16,17 @@
 // 2. getCookie : 쿠키 값을 가져오는 함수
 
 // localstorage를 이용해서 구현 할 수도 있다.
+
+function setCookie(name, value, hours){
+  // 빈 문자열로 변수 초기화 => 후에 쿠키 만료시간을 담을 변수
+  let expires = '';
+
+  // 만약에 hours라는 값이 있다면(true)
+  if(hours) {
+    // date라는 변수 안에 현재 시간을 가지는 Date 생성
+    let date = new Date();
+  // hours(시간) * 60(분) * 60(초) * 1000(밀리초) 
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000) )
+  }
+}
+
