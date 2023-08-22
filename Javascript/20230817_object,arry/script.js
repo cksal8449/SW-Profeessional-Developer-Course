@@ -174,10 +174,10 @@ document.querySelectorAll('.box-item')[index].insertAdjacentHTML('beforeend', sh
 let boxTitle = `<h2>${item.title}</h2>`;
 document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxTitle);
 
-let boxPrice = '<p>${item.price}</p>';
+let boxPrice = `<p>${item.price}</p>`;
 document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxPrice);
 
-let boxSize = '<p>${item.size}</p>';
+let boxSize = `<p>${item.size}</p>`;
 document.querySelectorAll('.sho-info')[index].insertAdjacentHTML('beforeend', boxSize);
 })
 
