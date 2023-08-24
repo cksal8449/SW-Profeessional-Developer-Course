@@ -18,12 +18,14 @@ document.querySelectorAll('.animate-input').forEach((e) => {
   // onkeyup 
   // 사용자가 키보드 키를 눌렀다가 떼었을 때 발생하는 이벤트
   // trim() : 공백을 제거하는 함수
-  // .btn-login의  clsaa에 disabled 속성을 remove
+  
+  // 공백을 제거한 input.value.length가 0보다 클 때 (= 입력된 값이 있다)
+  // .animate-input에 active class를 추가해서 span이 위로 올라가게 한다.
+  // .btn-login에 disabled 라는 속성을 remove
 
   // else
-  // .animate-input 에 activ class remove span 원래 자리
-  // btnLog disable 속성 add => setAttribute
-
+  // .animate-input 에 active class remove span 원래 자리
+  // btnLog disabled 속성 add => setAttribute
   input.onkeyup = () => {
     if(input.value.trim().length > 0) {
       e.classList.add('active');
@@ -35,8 +37,8 @@ document.querySelectorAll('.animate-input').forEach((e) => {
   }
 
   // 비밀번호 표시 / 숨기기
-  // 비밀번호 표시 버튼 클릭 했을 때 => 숨기기 input type ="text"
-  // 비밀번호 숨기기 클릭했을 때 => 표시 input type ="password"
+  // 비밀번호 표시 클릭 했을 때 => 숨기기 input type ="text"
+  // 비밀번호 숨기기 클릭 했을 때 => 표시 input type ="password"
   // getAttribute input type 속성을 가져온다.
   if(button) {
     button.onclick = () => {
