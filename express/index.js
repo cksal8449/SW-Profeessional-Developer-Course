@@ -75,3 +75,7 @@ app.get('/test', function(requests, response){
 app.get('/login', function(requests, response){
   response.sendFile(__dirname + '/login.html');
 })
+
+app.get('/sub1', function(requests, response){
+  response.sendFile(__dirname + '/sub1.html');
+})
