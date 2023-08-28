@@ -76,6 +76,7 @@ app.get('/login', function(requests, response){
   response.sendFile(__dirname + '/login.html');
 })
 
-app.get('/sub1', function(requests, response){
-  response.sendFile(__dirname + '/sub1.html');
+// /map 경로로 접속 했을 때 map.html 로그인 파일 보이게 작성
+app.get('/map', function(requests, response){
+  response.sendFile(__dirname + '/map.html');
 })
