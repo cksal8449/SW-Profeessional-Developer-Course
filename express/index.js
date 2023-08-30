@@ -191,16 +191,15 @@ app.post('/add', function(requests, response){
 })
 
 
-// /add로 접속하면 GET요청으로 DB에 저장된 데이터를 보여준다.
+// /add로 접속하면 GET 요청으로 DB에 저장된 데이터를 보여준다.
 // npm install ejs
 // .html -> .ejs
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 app.get('/add', function(requests, response){
-  // post라는 cllection에 저장된 데이터를 꺼낸다.
+  // post라는 collection에 저장된 데이터를 꺼낸다.
   db.collection('post').find().toArray(function(error, result){
     console.log(result)
+    response.render('data.ejs', {log : result})
   })
-
-  response.render('data.ejs', {log : result})
 })
