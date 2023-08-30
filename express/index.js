@@ -130,13 +130,45 @@ app.use(bodyParser.urlencoded({extended : true}));
 
 // MonogoDB
 // npm install mongodb@3.6.4
-const MongoClient = require('mongodb').MongoClient;
+// const MongoClient = require('mongodb').MongoClient;
 
 // // 데이터를 저장할 변수 하나 선언
+// let db;
+
+
+
+// Database access에서 만든 아이디 : 비밀번호
+// MongoClient.connect('mongodb+srv://admin:tkdlws4102@dara.r4t7mzn.mongodb.net/?retryWrites=true&w=majority', function(error, client){
+//   // 커넥션 에러의 99.9%가 url 오타
+//   if(error) {
+//     return console.log(error)
+//   }
+
+//   db = client.db('data');
+//   app.listen('7070', function(){
+//     console.log('seccess')
+//   })
+
+// })
+
+// app.post('/add', function(requests, response){
+//   console.log(requests.body)
+//   response.send('전송완료!')
+
+//   // db.collection('post').insertOen({아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
+//   //   console.log('db에 저장완료!')
+//   // })
+
+// })
+
+
+const MongoClient = require('mongodb').MongoClient;
+
+// 데이터를 저장할 변수 하나 선언
 let db;
 
 // Database access에서 만든 아이디 : 비밀번호
-MongoClient.connect('mongodb+srv://admin:tkdlws4102@dara.r4t7mzn.mongodb.net/?retryWrites=true&w=majority', function(error, client){
+MongoClient.connect('mongodb+srv://admin:1234@cluster0.5o4ysq5.mongodb.net/?retryWrites=true&w=majority', function(error, client){
   // 커넥션 에러의 99.9%가 url 오타
   if(error) {
     return console.log(error)
@@ -144,17 +176,31 @@ MongoClient.connect('mongodb+srv://admin:tkdlws4102@dara.r4t7mzn.mongodb.net/?re
 
   db = client.db('data');
   app.listen('7070', function(){
-    console.log('seccess')
+    console.log('dsgdsgdsg')
   })
-
 })
+
 
 app.post('/add', function(requests, response){
   console.log(requests.body)
-  response.send('전송완료!')
+  response.send('전송 완료!')
 
-  db.collection('post').insertOen({아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
+  db.collection('post').insertOne({아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
     console.log('db에 저장완료!')
   })
+})
 
+
+// /add로 접속하면 GET요청으로 DB에 저장된 데이터를 보여준다.
+// npm install ejs
+// .html -> .ejs
+app.set('view engine', 'ejs')
+
+app.get('/add', function(requests, response){
+  // post라는 cllection에 저장된 데이터를 꺼낸다.
+  db.collection('post').find().toArray(function(error, result){
+    console.log(result)
+  })
+
+  response.render('data.ejs', {log : result})
 })
