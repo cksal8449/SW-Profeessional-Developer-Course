@@ -180,26 +180,43 @@ MongoClient.connect('mongodb+srv://admin:1234@cluster0.5o4ysq5.mongodb.net/?retr
   })
 })
 
-
+// form에서 /add 경로로 post 요청을 하면,
+// DB에서 total collection을 찾아서 
+// 해당 collection에 있는 총 데이터 수 찾아서
+// totalDataLength 라는 변수에 저장 
+// post라는 collection에 새로운 데이터가 들어올 경우
+// _id 값을 totalDataLength에 1 증가한 값
+// total collection의 totalData +1
 app.post('/add', function(requests, response){
   console.log(requests.body)
   response.send('전송 완료!')
 
-  db.collection('post').insertOne({_id : 1, 아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
-    console.log('db에 저장완료!')
-  })
 
-  // 새로운 데이터가 저장 됐을 때 total collection에 있는 totalData + 1
-  // .updateOne({변경할 데이터}, {$inc : {수정값}})
-  // update operator (연산자) #set, $inc(증가) 등 여러가지
-  // {$set : {totalData : 변경 할 값}}
-  // {$inc :{totalData : 기존값에 더해줄 값}}
-  db.collection('total').updateOne({name : 'dataLength'}, { $inc : {totalData : 1}},function(error, result){
-    if(error) {
-      return console.log(error)
-    }
+
+  // DB에서 total collection 총 데이터 수 꺼내오기.
+  // 데이터를 전부 찾고 싶다면 find(), 하나만 찾고 싶으면 findOne()
+  // name이 totalData인 데이터를 찾아달라는 쿼리문
+  db.collection('total').findOne({name : 'dataLength'}, function(error, result){
+    console.log(result.totalData) // total collection있는 총 데이터 수
+    let totalDataLength = result.totalData;
+
+    db.collection('post').insertOne({_id : 1 ,아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
+      console.log('db에 저장완료!')
+    })
+
+    // 새로운 데이터가 저장 됐을 때 total collection에 있는 totalData + 1
+    // .updateOne({변경 할 데이터}, {$inc : {수정값}})
+    // update operator(연산자) $set, $inc(증가) 등 여러가지 
+    // {$set : {totalData : 변경 할 값}}
+    // {$inc : {totalData : 기존값에 더해줄 값}}
+    db.collection('total').updateOne({name : 'dataLength'}, { $inc : { totalData : 1}},function(error, result){
+      if(error) {
+        return console.log(error)
+      }
+    })
   })
 })
+
 
 
 // /add로 접속하면 GET 요청으로 DB에 저장된 데이터를 보여준다.
