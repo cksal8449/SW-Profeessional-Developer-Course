@@ -190,10 +190,11 @@ app.post('/add', function(requests, response){
   })
 
   // 새로운 데이터가 저장 됐을 때 total collection에 있는 totalData + 1
-  db.collection('total').updateOne({name : 'dataLength'}, { $inc : {totalData : 1}},function(){error, result})
-  if(error) {
-    return console.log(error)
-  }
+  db.collection('total').updateOne({name : 'dataLength'}, { $inc : {totalData : 1}},function(error, result){
+    if(error) {
+      return console.log(error)
+    }
+  })
 })
 
 
