@@ -217,8 +217,6 @@ app.post('/add', function(requests, response){
   })
 })
 
-
-
 // /add로 접속하면 GET 요청으로 DB에 저장된 데이터를 보여준다.
 // npm install ejs
 // .html -> .ejs
@@ -231,3 +229,17 @@ app.get('/add', function(requests, response){
     response.render('data.ejs', {log : result})
   })
 })
+
+app.delete('/delete', function(requests, response){
+  console.log(requests.body._id)
+  requests.body._id = parseInt(requests.body._id)
+
+
+  db.collection('post').deleteOne({_id : requests.body._id}, function(error, result){
+    if(error) {
+      console.log(erorr)
+    }
+    console.log('삭제완료!')
+  })
+})
+
