@@ -240,6 +240,7 @@ app.delete('/delete', function(requests, response){
       console.log(erorr)
     }
     console.log('삭제완료!')
+
   })
 })
 
