@@ -4,8 +4,19 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   padding: 40px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
 }
 
 .box-item {
@@ -27,6 +38,10 @@ display: flex;
   font-weight: 700;
 }
 
-.button {
-  background-color: aqua;
+.edit {
+  background-color: dodgerblue;
+}
+
+.delete{
+  background-color: rgb(182, 3, 3);
 }

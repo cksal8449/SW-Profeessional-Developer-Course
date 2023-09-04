@@ -45,7 +45,7 @@
         // Ajax 요청이 성공 했을 때 실행할 코드(콜백함수)
       }).done(function(result){
         console.log(result)
-        curClick.parent('.box-item').fadeOut();
+        curClick.parent().parent('.box-item').fadeOut();
       })
     })
   </script>
