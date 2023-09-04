@@ -21,7 +21,6 @@
 // 폴더 생성 -> cd로 해당 폴더로 경로 이동
 // cd 폴더명
 // cd(Change Directory), cd .., ls
-
 // npm init => package.json 파일 생성된다.
 // npm init 후 쭉 엔터 entry point 부분에 작성된 파일명과 
 // package.json 파일에 작성된 "main": "index.js", 파일명이 동일해야한다.
@@ -136,7 +135,7 @@ const MongoClient = require('mongodb').MongoClient;
 let db;
 
 // Database access에서 만든 아이디 : 비밀번호
-MongoClient.connect('mongodb+srv://admin:wmfdlekt12@data.pvgodwt.mongodb.net/?retryWrites=true&w=majority', function(error, client){
+MongoClient.connect('mongodb+srv://admin:1234@cluster0.5o4ysq5.mongodb.net/?retryWrites=true&w=majority', function(error, client){
   // 커넥션 에러의 99.9%가 url 오타
   if(error) {
     return console.log(error)
