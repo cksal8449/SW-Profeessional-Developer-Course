@@ -267,3 +267,17 @@ app.get('/info/:id', function(requests, response){
  })
 
 
+// /edit.ejs 경로로 접속시 edit.ejs 내용 보여주기
+// /edit/:id 
+// params.id로 받은 _id 값  db.collection post에서 가져와서
+// edit.ejs input(id,pw) value 값으로 바인딩
+ app.get('/edit/:id', function(requests, response){
+    db.collection('post').findOne({_id : parseInt(requests.params.id)}, function(error, result){
+      console.log(result)
+      response.render('edit.ejs', {data : result})
+    })
+  })
+
+
+
+
