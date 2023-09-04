@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login mode change</title>
+    <link rel="stylesheet" href="./style.css">
+    <!--favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png"/>
+    <link rel="/manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-container">
+        <!-- form box -->
+        <div class="form-box">
+          <h1 class="logo">
+            <img class="light-logo" src="./images/logo-light.png" alt="light-logo">
+            <img class="dark-logo" src="./images/logo-dark.png" alt="dark-logo">
+          </h1>
+
+          <div class="signin-form">
+            <!-- 전화번호, 사용자 이름 또는 이메일 -->
+            <div class="form-group">
+              <div class="animate-input">
+                <span>전화번호, 사용자 이름 또는 이메일</span>
+                <input type="text">
+              </div>
+            </div>
+
+              <!-- 비밀번호 -->
+              <div class="form-group">
+                <div class="animate-input">
+                  <span>비밀번호</span>
+                  <input type="password">
+                  <button type="button">비밀번호 표시</button>
+                </div>
+              </div>
+
+              <!-- 로그인 버튼 -->
+              <div class="btn-group">
+               <button disabled class="btn-login" type="button">로그인</button>
+              </div>
+
+              <!-- 또는 -->
+              <div class="or-box">
+               <div></div>
+               <div>또는</div>
+               <div></div>
+              </div>
+
+              <!-- 페이스북으로 로그인 -->
+              <div class="btn-group">
+               <button class="fb-btn" type="button">
+               <img src="./images/facebook-icon.png" alt="facebook-icon">
+               <span>페이스북으로 로그인</span>
+               </button>
+              </div>
+
+              <!-- 비밀번호를 잊으셨나요? -->
+              <a class="forgot-pw" href="">비밀번호를 잊으셨나요?</a>
+
+          </div>
+        </div>
+
+        <!-- 가입하기 box -->
+        <div class="form-box join-box">
+          <p>계정이 없으신가요?
+            <a href="">가입하기</a>
+          </p>
+        </div>
+
+        <!-- 엡 다운로드 -->
+        <div class="app-down">
+          <p>앱을 다운로드하세요.</p>
+          <div class="store-link">
+            <a href=""><img src="./images/app-store.png" alt="app-store"></a>
+            <a href=""><img src="./images/gg-play.png" alt="google-play.png"></a>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <ul class="link-list">
+          <li><a href="">Meta</a></li>
+          <li><a href="">소개</a></li>
+          <li><a href="">블로그</a></li>
+          <li><a href="">채용 정보</a></li>
+          <li><a href="">도움말</a></li>
+          <li><a href="">API</a></li>
+          <li><a href="">개인정보처리방침</a></li>
+          <li><a href="">약관</a></li>
+          <li><a href="">인기 계정</a></li>
+          <li><a href="">위치</a></li>
+          <li><a href="">Instagram Lite</a></li>
+          <li><a id="darkmode-toggle" href="">Darkmode</a></li>
+        </ul>
+        <p class="copyright">© 2023 Instagram from Meta</p class="copyright">
+      </footer>
+    </div>
+    <!-- <script src="./script.js"></script> -->
+    <script src="./삼항연산자.js"></script>
+
+  </body>
+</html>
