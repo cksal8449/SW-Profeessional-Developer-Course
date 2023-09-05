@@ -245,3 +245,15 @@ app.get('/edit/:id', function(requests, response){
     response.render('edit.ejs', {data : result})
   })
 })
+
+// npm install method-override
+// HTML form 태그에서는 GET, POST 요청만 가능!
+// PUT, 
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
+app.put('/edit', function(requests, response){
+  db.collection('post').updateOne({_id : parseInt(requests.body._id)},{ $set : { 아이디 : requests.body.id, 비밀번호 : requests.body.pw}},function(error, result){
+    console.log('수정완료');
+  })
+})
