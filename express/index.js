@@ -288,3 +288,15 @@ app.put('/edit', function(requests, response){
 // DB CRUD (Create(생성), Read(읽기), Update(수정), Delete(삭제))
 // insert, find, update, delete 
 // insertOne, findOne, updateOne, deleteOne
+
+// Login 기능 구현
+// join.ejs 파일 생성
+// 회원가입 폼 작성
+// db collection('login')에 join.ejs 파일에 있는 input value값 저장
+
+app.get('/join', function(requests, response){
+  db.collection('post').findOne({_id : parseInt(requests.params.id)}, function(error, result){
+    console.log(result)
+    response.render('join.ejs', {data : result})
+  })
+})
