@@ -63,9 +63,9 @@ app.get('/test', function(requests, response){
 })
 
 // localhost:7000/login 으로 접속시 보여줄 화면 => login.html
-app.get('/login', function(requests, response){
-  response.sendFile(__dirname + '/login.html')
-})
+// app.get('/login', function(requests, response){
+//   response.sendFile(__dirname + '/login.html')
+// })
 
 // localhost:7000/map 으로 접속시 보여줄 화면 => map.html
 // map.html : 카카오 지도 OPEN API
@@ -108,34 +108,34 @@ MongoClient.connect('mongodb+srv://admin:1234@cluster0.5o4ysq5.mongodb.net/?retr
 // form에서 /add 경로로 post 요청을 하면, 
 // DB total collection에 있는 총 데이터 수(dataLength)를 찾아서 totalDataLength 라는 변수에 그 값을 저장한다.
 // post collection에 새로운 데이터가 들어올 경우 _id 값을 totalDataLength에 + 1 한 값
-// total collection의  totalData + 1
-app.post('/add', function(requests, response){
-  console.log(requests.body)
-  response.send('전송 완료!')
+// // total collection의  totalData + 1
+// app.post('/add', function(requests, response){
+//   console.log(requests.body)
+//   response.send('전송 완료!')
 
-  // DB에서 total collection 총 데이터 수 꺼내오기.
-  // 데이터를 전부 찾고 싶다면 find(), 하나만 찾고 싶으면 findOne()
-  // name이 totalData인 데이터를 찾아달라는 쿼리문
-  db.collection('total').findOne({name : 'dataLength'}, function(error, result){
-    console.log(result.totalData) // total collection있는 총 데이터 수
-    let totalDataLength = result.totalData;
+//   // DB에서 total collection 총 데이터 수 꺼내오기.
+//   // 데이터를 전부 찾고 싶다면 find(), 하나만 찾고 싶으면 findOne()
+//   // name이 totalData인 데이터를 찾아달라는 쿼리문
+//   db.collection('total').findOne({name : 'dataLength'}, function(error, result){
+//     console.log(result.totalData) // total collection있는 총 데이터 수
+//     let totalDataLength = result.totalData;
 
-    db.collection('post').insertOne({_id : totalDataLength + 1 ,아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
-      console.log('db에 저장완료!')
-    })
+//     db.collection('post').insertOne({_id : totalDataLength + 1 ,아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
+//       console.log('db에 저장완료!')
+//     })
   
-    // 새로운 데이터가 저장 됐을 때 total collection에 있는 totalData + 1
-    // .updateOne({변경 할 데이터}, {$inc : {수정값}})
-    // update operator(연산자) $set, $inc(증가) 등 여러가지 
-    // {$set : {totalData : 변경 할 값}}
-    // {$inc : {totalData : 기존값에 더해줄 값}}
-    db.collection('total').updateOne({name : 'dataLength'}, { $inc : { totalData : 1}},function(error, result){
-      if(error) {
-        return console.log(error)
-      }
-    })
-  })
-})
+//     // 새로운 데이터가 저장 됐을 때 total collection에 있는 totalData + 1
+//     // .updateOne({변경 할 데이터}, {$inc : {수정값}})
+//     // update operator(연산자) $set, $inc(증가) 등 여러가지 
+//     // {$set : {totalData : 변경 할 값}}
+//     // {$inc : {totalData : 기존값에 더해줄 값}}
+//     db.collection('total').updateOne({name : 'dataLength'}, { $inc : { totalData : 1}},function(error, result){
+//       if(error) {
+//         return console.log(error)
+//       }
+//     })
+//   })
+// })
 
 
 // /add로 접속하면 GET 요청으로 DB에 저장된 데이터를 보여준다.
@@ -290,12 +290,20 @@ app.put('/edit', function(requests, response){
 // insertOne, findOne, updateOne, deleteOne
 
 // Login 기능 구현
-// 1.join.ejs 파일 생성
-// 2.회원가입 폼 작성
-// 3.db collection('login')에 join.ejs 파일에 있는 input value값 저장
+// 1. views 폴더 안 join.ejs 파일 생성 
+// 2. 회원가입 폼 작성 
+// 3. db.collection('login')에 join.ejs 파일에 있는 input value값 저장 
 app.get('/join', function(requests, response){
-  db.collection('login').findOne({_id : parseInt(requests.params.id)}, function(error, result){
-    console.log(result)
-    response.render('join.ejs', {data : result})
+  response.render('join.ejs')
+})
+
+app.post('/join', function(requests, response){
+  db.collection('total').findOne({ name : 'dataLength'}, function(error, result){
+    console.log(result.totalData)
+    let totalDataLength = result.totalData;
+
+    db.collection('login').insertOne({_id : totalDataLength + 1, name: requests.body.name, id : requests.body.id, pw : requests.body.pw }, function(error, result){
+      console.log('login collection에 저장완료!')
+    })
   })
 })
