@@ -2,7 +2,7 @@
 
 // 설치한 라이브러리 
 // 1. express(설치방법 => 244번 코드 확인)
-// 2. nodemon => npminstall -g nodemon
+// 2. nodemon => npm install -g nodemon
 // 3. body-perser => npm install body-parser
 // 4. MongoDB => npm install mongodb@3.6.4
 // 5. ejs => npm install ejs
@@ -19,10 +19,11 @@ app.use(bodyParser.urlencoded({extended : true}));
 // MongoDB
 const MongoClient = require('mongodb').MongoClient;
 
-// ejs 설치 (html에서 바로 데이터 바인딩 가능) <%= 데이터 %>
+// ejs (html에서 바로 데이터 바인딩 가능) <%= 데이터 %>
+// ejs 파일은 반드시 views라는 폴더 안에 위치해야 한다.
 app.set('view engine', 'ejs');
 
-// HTML form 태그에서는 GET, POST요청만 가능함!
+// HTML <form> 태그에서는 GET, POST요청만 가능!
 // PUT, DELETE 요청을 하고 싶다면 외부 라이브러리 설치 
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
@@ -57,7 +58,7 @@ app.get('/', function(requests, response){
   response.sendFile(__dirname + '/index.html');
 })
 
-// 'localhost:7000/test'로 접속시 실행 할 코드
+// 'localhost:7000/test'로 접속시 send()안 내용을 보여준다.
 app.get('/test', function(requests, response){
   response.send('Test 페이지 입니다.')
 })
@@ -108,34 +109,34 @@ MongoClient.connect('mongodb+srv://admin:1234@cluster0.5o4ysq5.mongodb.net/?retr
 // form에서 /add 경로로 post 요청을 하면, 
 // DB total collection에 있는 총 데이터 수(dataLength)를 찾아서 totalDataLength 라는 변수에 그 값을 저장한다.
 // post collection에 새로운 데이터가 들어올 경우 _id 값을 totalDataLength에 + 1 한 값
-// // total collection의  totalData + 1
-// app.post('/add', function(requests, response){
-//   console.log(requests.body)
-//   response.send('전송 완료!')
+// total collection의  totalData + 1
+app.post('/add', function(requests, response){
+  console.log(requests.body)
+  response.send('전송 완료!')
 
-//   // DB에서 total collection 총 데이터 수 꺼내오기.
-//   // 데이터를 전부 찾고 싶다면 find(), 하나만 찾고 싶으면 findOne()
-//   // name이 totalData인 데이터를 찾아달라는 쿼리문
-//   db.collection('total').findOne({name : 'dataLength'}, function(error, result){
-//     console.log(result.totalData) // total collection있는 총 데이터 수
-//     let totalDataLength = result.totalData;
+  // DB에서 total collection 총 데이터 수 꺼내오기.
+  // 데이터를 전부 찾고 싶다면 find(), 하나만 찾고 싶으면 findOne()
+  // name이 totalData인 데이터를 찾아달라는 쿼리문
+  db.collection('total').findOne({name : 'dataLength'}, function(error, result){
+    console.log(result.totalData) // total collection있는 총 데이터 수
+    let totalDataLength = result.totalData;
 
-//     db.collection('post').insertOne({_id : totalDataLength + 1 ,아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
-//       console.log('db에 저장완료!')
-//     })
+    db.collection('post').insertOne({_id : totalDataLength + 1 ,아이디 : requests.body.id, 비밀번호 : requests.body.pw}, function(error, result){
+      console.log('db에 저장완료!')
+    })
   
-//     // 새로운 데이터가 저장 됐을 때 total collection에 있는 totalData + 1
-//     // .updateOne({변경 할 데이터}, {$inc : {수정값}})
-//     // update operator(연산자) $set, $inc(증가) 등 여러가지 
-//     // {$set : {totalData : 변경 할 값}}
-//     // {$inc : {totalData : 기존값에 더해줄 값}}
-//     db.collection('total').updateOne({name : 'dataLength'}, { $inc : { totalData : 1}},function(error, result){
-//       if(error) {
-//         return console.log(error)
-//       }
-//     })
-//   })
-// })
+    // 새로운 데이터가 저장 됐을 때 total collection에 있는 totalData + 1
+    // .updateOne({변경 할 데이터}, {$inc : {수정값}})
+    // update operator(연산자) $set, $inc(증가) 등 여러가지 
+    // {$set : {totalData : 변경 할 값}}
+    // {$inc : {totalData : 기존값에 더해줄 값}}
+    db.collection('total').updateOne({name : 'dataLength'}, { $inc : { totalData : 1}},function(error, result){
+      if(error) {
+        return console.log(error)
+      }
+    })
+  })
+})
 
 
 // /add로 접속하면 GET 요청으로 DB에 저장된 데이터를 보여준다.
@@ -235,7 +236,7 @@ app.put('/edit', function(requests, response){
 // Node.js 장단점
 // 장점 : 가벼운 요청부터 먼저 처리
 // 단점 : 이미지, 동영상, 연산 처리가 필요한 서비스를 개발해야 될 경우 속도가 떨어지고, 라이브러리도 부족하다. 
-// 이에 최적화된 언어 = python(빅데이터, 데이터 시각화 등)
+// 이에 최적화된 언어 = python(빅데이터 분석, 데이터 시각화 등)
 
 
 // 1. Node.js express 서버 구축하는 방법
@@ -264,7 +265,7 @@ app.put('/edit', function(requests, response){
 // 서버 실행
 // nodemon index.js
 
-// powershell 보안 에러
+// *** powershell 보안 에러
 // 에러 원인 : Restricted일 때 허가된 script외에 막아버리기 때문에 에러가 발생한다.
 
 // 검색 -> powershell(관리자 권한으로 실행)
@@ -274,6 +275,7 @@ app.put('/edit', function(requests, response){
 
 // 서버한테 정보를 보내주는 코드
 // 서버에 보낸 정보를 영구 저장 하려면 DB(Data Base)에 저장
+
 
 // url 이름짓기
 // 1. URL 명사로 작성 추천 '/명사'
@@ -285,9 +287,10 @@ app.put('/edit', function(requests, response){
 
 
 // 서버에 GET, POST, PUT, DELETE 요청하는 방법
-// DB CRUD (Create(생성), Read(읽기), Update(수정), Delete(삭제))
+// CRUD (Create(생성), Read(읽기), Update(수정), Delete(삭제))
 // insert, find, update, delete 
 // insertOne, findOne, updateOne, deleteOne
+
 
 // Login 기능 구현
 // 1. views 폴더 안 join.ejs 파일 생성 
@@ -304,6 +307,13 @@ app.post('/join', function(requests, response){
 
     db.collection('login').insertOne({_id : totalDataLength + 1, name: requests.body.name, id : requests.body.id, pw : requests.body.pw }, function(error, result){
       console.log('login collection에 저장완료!')
+    })
+
+    db.collection('total').updateOne({ name : 'dataLength'}, {$inc : {totalData : 1}}, function(error, result){
+      if(error) {
+        return console.log(error)
+      }
+      response.redirect('/login')
     })
   })
 })
