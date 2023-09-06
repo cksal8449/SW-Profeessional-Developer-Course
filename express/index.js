@@ -293,9 +293,8 @@ app.put('/edit', function(requests, response){
 // 1.join.ejs 파일 생성
 // 2.회원가입 폼 작성
 // 3.db collection('login')에 join.ejs 파일에 있는 input value값 저장
-
 app.get('/join', function(requests, response){
-  db.collection('post').findOne({_id : parseInt(requests.params.id)}, function(error, result){
+  db.collection('login').findOne({_id : parseInt(requests.params.id)}, function(error, result){
     console.log(result)
     response.render('join.ejs', {data : result})
   })
