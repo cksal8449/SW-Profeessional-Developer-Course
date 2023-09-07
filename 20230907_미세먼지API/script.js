@@ -18,7 +18,7 @@ xhr.onreadystatechange = function () {
   // responsData에서 원하는 데이터만 추출해서 html 표기
   if(responsData.response.body.items) {
     let items = responsData.response.body.items;
-    console.log(items)
+    // console.log(items)
 
     let dataDisplay = document.getElementById('data');
     for(let i = 0; i < items.length; i++) {
@@ -30,12 +30,13 @@ xhr.onreadystatechange = function () {
         dataDisplay.appendChild(dataItem);
       }
     }
-
+    } else {
+    console.log('데이터 구조 다시 확인바람')
   }
-} else {
+  } else {
   console.log('HTTP 요청 실패' + this.status)
-}
-    }
+  }
+  }
 };
 
 xhr.send('');
