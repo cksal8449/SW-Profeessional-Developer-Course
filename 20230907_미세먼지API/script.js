@@ -15,22 +15,24 @@ xhr.onreadystatechange = function () {
         let responsData = JSON.parse(this.responseText);
         console.log(responsData.response.body.items)
 
-        // responsData에서 원하는 데이터만 추출해서 html 표기
-        if(responsData.response.body.items){
-          let items = responsData.response.body.items;
-          let dataDisplay = document.getElementById('data');
-          for(let i =0; i < items.lenghth; i++){
-            let item = items[i]
+  // responsData에서 원하는 데이터만 추출해서 html 표기
+  if(responsData.response.body.items) {
+    let items = responsData.response.body.items;
+    console.log(items)
 
-            let dataItem = document.createElement('div');
-            dataItem.innerHTML = item.cityName + '미세먼지:' + item.pm10Value
-            dataDisplay.appendChild(dataItem);
-          }
+    let dataDisplay = document.getElementById('data');
+    for(let i = 0; i < items.length; i++) {
+      let item = items[i];
 
-        }
-      } else {
-        console.log('HTTP 요청 실패' + this.status)
-      }
+      let dataItem = document.createElement('div');
+      dataItem.innerHTML = item.cityName + '미세먼지 : ' + item.pm10Value;
+      dataDisplay.appendChild(dataItem);
+    }
+
+  }
+} else {
+  console.log('HTTP 요청 실패' + this.status)
+}
     }
 };
 
