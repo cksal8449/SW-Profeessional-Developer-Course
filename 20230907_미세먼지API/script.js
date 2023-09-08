@@ -1,11 +1,11 @@
 var xhr = new XMLHttpRequest();
 
 var url = 'http://apis.data.go.kr/B552584/ArpltnStatsSvc/getCtprvnMesureSidoLIst'; /*URL*/
-var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'7gpEZV105Yp6x9Fq7q3wadEQtdMDnJ5YUCi86TMqXyp1l3ox8sh7vZaN1%2BV6rNe%2BuoSVktxWkKtR4%2B%2F0CQZGwQ%3D%3D'; /*Service Key*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'rOGI%2BIvn6bqhwghISJpom2Dz1zr0tbNdR%2Blm8fl5xrLwUFt9EGQHinJBCAQhO4c3yub9o5bhWPy9AxyTKTen%2BQ%3D%3D'; /*Service Key*/
 queryParams += '&' + encodeURIComponent('returnType') + '=' + encodeURIComponent('json'); /* 응답 데이터 타입 설정 */
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('100'); /* 한 페이지 결과 수 */
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /* 페이지 번호 설정 */
-queryParams += '&' + encodeURIComponent('sidoName') + '=' + encodeURIComponent('경북'); /* 조회 할 데이터 시도 이름 설정*/
+queryParams += '&' + encodeURIComponent('sidoName') + '=' + encodeURIComponent('대전'); /* 조회 할 데이터 시도 이름 설정*/
 queryParams += '&' + encodeURIComponent('searchCondition') + '=' + encodeURIComponent('DAILY'); /* 데이터 기간 */
 
 xhr.open('GET', url + queryParams);
@@ -34,7 +34,7 @@ function updateData(){
           for(let i = 0; i < items.length; i++) {
             let item = items[i];
   
-            if(item.cityName == '경주시') {
+            if(item.cityName == '유성구') {
               // cityName이 '경주시'인 것 중에 dataTime 가장 최근 데이터 가져오기
               // latestData 값이 비어 있을 경우 = True
               // item.dataTime 값이 latestData.dataTime값보다 클 경우
@@ -44,25 +44,21 @@ function updateData(){
                 latestData = item;
                 console.log(latestData)
 
-                //미세먼지 농도별 예보 
-                if (item.pm10Value <= 30) {
-                  item.pm10Value = '좋음'
-                  console.log=('좋음')
-                } else if (item.pm10Value <= 80) {
-                  item.pm10Value = '보통'
-                  console.log=('보통')
-                }else if (item.pm10Value <= 150) {
-                  item.pm10Value = '나쁨'
-                  console.log=('나쁨')
-                }else {
-                  item.pm10Value = '매우나쁨'
-                  console.log=('매우나쁨')
-                };
+                let dataItem = `
+                  <div class="dust-item">
+                    <div>${latestData.sidoName}</div>
+                    <div>${latestData.cityName}</div>
+                    <div>${latestData.pm10Value}</div>
+                  </div>
+                `
+                dataDisplay.insertAdjacentHTML('beforeend', dataItem);
 
-                let dataItem = document.createElement('div');
-                dataItem.innerHTML =  '미세먼지 ' + item.pm10Value;
-                // dataItem.innerHTML = item.cityName + '미세먼지 : ' + latestData.pm10Value + latestData.dataTime;
-                dataDisplay.appendChild(dataItem);
+                let dustItem = document.querySelector('.dust-item');
+                if(item.pm10Value >= 20) {
+                 dustItem.classList.add('not-good');
+                } else {
+                 dustItem.classList.add('good');
+                }
               }
             }
           }
