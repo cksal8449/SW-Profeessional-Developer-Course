@@ -43,7 +43,7 @@ app.use(express.static(__dirname))
 // 내 컴퓨터에서 7000번 포트로 진입 했을 때,
 // 콜백함수 안에 있는 코드 실행
 // localhost:7000(port number)로 접속
-app.listen(7000, function(){
+app.listen(8080, function(){
   console.log('7000번 포트')
 })
 
@@ -100,7 +100,7 @@ MongoClient.connect('mongodb+srv://admin:1234@cluster0.5o4ysq5.mongodb.net/?retr
   }
 
   db = client.db('data');
-  app.listen('7070', function(){
+  app.listen('8080', function(){
     console.log('7070번 port!')
   })
 })
