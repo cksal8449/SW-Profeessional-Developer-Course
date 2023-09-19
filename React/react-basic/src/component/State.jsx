@@ -17,6 +17,16 @@ const State = () => {
   // let num = 0;
   let [count, setCount] = useState(0);
   let [title, setTitle] = useState('리액트 너무 어려워요!');
+  let [name, setName] = useState(['이름1','이름2','이름3','이름4']);
+  let [bg, setBg] = useState('white');
+
+   
+  let changeBg = () => {
+    // 삼항 연산자로 현재 배경색이 white라면
+    // 다른색으로 바꿔주고, 아니라면 white로 바꿔라
+  //  <div style={{bagroundColor= {bg == white} ? 'blue' : {bg != white} ? 'white'}}></div>
+  }
+
   // count : 해당 상태값을 의미하는 변수
   // setcount : 해당 상태값을 변경하는 함수
   // 이 함수를 호출할 때 변경된 값을 인수로 전달한다.
@@ -32,10 +42,24 @@ const State = () => {
         // state는 등호로 변경할 수 없다.
         // state 변경 함수에는 이름 앞에 set을 붙여준다.
         // state 변경 함수로 값을 변경해야 html이 재랜더링 된다.
-        let titleCopy = [...title]
+        // state 변경 함수는 state가 가지고 있는 값을 비교해서 
+        // 같은 값이면 변경하지 않고, 다른 값이면 state 함수 호출 값으로 변경 시켜준다.
+        let titleCopy = [...title];
         titleCopy = '리액트 너무 재밌어요!!';
+        // console.log(title == titleCopy)
         setTitle(titleCopy)
       }}>제목변경</button>
+
+      <h3>{name}</h3>
+      <button onClick={() =>{
+        let nameCopy = [...name];
+        nameCopy[0] = '강아지'; 
+        setName(nameCopy)
+      }}>이름변경</button>
+
+      <h2>배경색</h2>
+      <button>배경색 변경</button>
+
     </div>
   );
 };
