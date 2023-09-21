@@ -9,7 +9,7 @@ const Map = () => {
   // console.log(num)
   console.log(arrPlus)
 
-  // num 제곱근
+  // num의 제곱근
   let arrSquare = num.map((num) => {
   // 제곱 구하는 함수 Math.pow()
    return Math.pow(num, 2)
@@ -33,12 +33,13 @@ const Map = () => {
      }
 
      {
-      // console.log 두 번 찍히는 이유 => React.StrictMode 때문
+      // console.log 두 번 찍히는 이유 => React.StrictMode 때문(index.js)
       [1,2,3,4,5].map((num) => {
         // console.log(num)
       })
      }
      {
+      // 배열 속 문자를 대문자로 변환한 값을 화면에 수직으로
         ['chanmi', 'jimin', 'jihey'].map((str, index) => {
           return <div key={index}>{str.toUpperCase()}</div>
         })
