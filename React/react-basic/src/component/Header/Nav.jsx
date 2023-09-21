@@ -22,9 +22,9 @@ const Nav = () => {
         {
           menuItems.map((item, index) => {
             return (
-              <li className='gnb-item' key={index}>
-                <a href={item.to}>{item.text}</a>
-                </li>
+             <li className='gnb-item' key={index}>
+              <a href={item.to}>{item.text}</a>
+             </li>
             )
           })
         }
