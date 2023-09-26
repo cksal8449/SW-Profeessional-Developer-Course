@@ -14,9 +14,10 @@
 }
 
 .box-item img {
-  width: 300px;
+  width: 400px;
+  height: 400px;
   object-fit: cover;
-} 
+}
 
 .btn-list {
   margin-top: 30px;
@@ -27,9 +28,8 @@
   border-radius: 5px;
   margin-right: 8px;
   padding: 10px 30px;
-  background-color: #000;
   color: #fff;
-  cursor: pointer;
+  background-color: #000;
 }
 
 .btn-list button:last-child {
