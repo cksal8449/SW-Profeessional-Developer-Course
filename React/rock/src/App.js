@@ -30,7 +30,7 @@ function App() {
     let comChoice = randomChoice();
     setComSelect(comChoice);
 
-    setResult(judgment(userChoice, comChoice))
+    setResult(judgment(choice[userChoice], comChoice))
   }
 
   // 컴퓨터 랜덤 값 선택
